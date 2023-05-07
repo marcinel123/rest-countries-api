@@ -1,7 +1,12 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
-export const App = () => {
-	console.log("diss");
+export const App = () => (
+	<ThemeProvider theme={theme}>
+		<StyledMain>Hello</StyledMain>
+	</ThemeProvider>
+);
 
-	return <div className="App"></div>;
-};
+const StyledMain = styled.main`
+	background-color: ${(props) => props.theme.colors.veryDarkBlueBg};
+`;
