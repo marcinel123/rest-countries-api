@@ -9,4 +9,7 @@ export const App = () => (
 
 const StyledMain = styled.main`
 	background-color: ${(props) => props.theme.colors.veryDarkBlueBg};
+	font-size: ${(props) => props.theme.fonts.sizes.m};
+	font-family: ${(props) => props.theme.fonts.family.basic};
+	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 `;

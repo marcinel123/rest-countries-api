@@ -10,6 +10,7 @@
 		"airbnb",
 		"airbnb-typescript",
 		"eslint:recommended",
+		"plugin:react/jsx-runtime",
 		"prettier"
 	],
 	"overrides": [],
@@ -18,7 +19,7 @@
 		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["react", "react/jsx-runtime", "@typescript-eslint", "prettier"],
+	"plugins": ["react", "@typescript-eslint", "prettier"],
 	"rules": {
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"@typescript-eslint/no-floating-promises": 0,
@@ -32,6 +33,7 @@
 		"no-console": ["error", { "allow": [""] }],
 		"import/prefer-default-export": 0,
 		"react/function-component-definition": 0,
-		"react/self-closing-comp": 0
+		"react/self-closing-comp": 0,
+		"prettier/prettier": 0
 	}
 }

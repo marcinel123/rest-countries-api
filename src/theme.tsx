@@ -7,5 +7,18 @@ export const theme = {
 		veryLightGray: "#FAFAFA",
 		white: "#FFFFFF",
 	},
-	fontSizes: {},
+	fonts: {
+		sizes: {
+			s: "0.875rem",
+			m: "1rem",
+		},
+		family: {
+			basic: "Nunito Sans",
+		},
+		weight: {
+			basic: 300,
+			semiBold: 600,
+			extraBold: 800,
+		},
+	},
 };
