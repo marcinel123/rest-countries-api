@@ -1,5 +1,9 @@
 export const InputandFilterPanel = () => (
 	<section>
-		<input placeholder="search for a conutry" />
+		<form>
+		<label htmlFor="country_search">
+		<input id="country_search" placeholder="search for a conutry" />
+		</label>
+		</form>
 	</section>
 );
