@@ -7,8 +7,10 @@
 	"extends": [
 		"react-app",
 		"react-app/jest",
-		"standard-with-typescript",
+		"airbnb",
+		"airbnb-typescript",
 		"eslint:recommended",
+		"plugin:react/jsx-runtime",
 		"prettier"
 	],
 	"overrides": [],
@@ -17,18 +19,21 @@
 		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["react"],
+	"plugins": ["react", "@typescript-eslint", "prettier"],
 	"rules": {
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"@typescript-eslint/no-floating-promises": 0,
 		"@typescript-eslint/consistent-type-imports": 0,
 		"@typescript-eslint/strict-boolean-expressions": 0,
 		"@typescript-eslint/restrict-template-expressions": 0,
+		"no-use-before-define": 0,
+		"@typescript-eslint/no-use-before-define": 0,
 		"quotes": ["error", "double"],
-		"no-multiple-empty-lines": [
-			"error",
-			{ "max": 3, "maxEOF": 0 }
-		],
-		"no-console": ["error", { "allow": [""] }]
+		"no-multiple-empty-lines": ["error", { "max": 3, "maxEOF": 0 }],
+		"no-console": ["error", { "allow": [""] }],
+		"import/prefer-default-export": 0,
+		"react/function-component-definition": 0,
+		"react/self-closing-comp": 0,
+		"prettier/prettier": 0
 	}
 }
