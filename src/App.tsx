@@ -7,7 +7,7 @@ import { GlobalStyle } from "./GlobalStyles";
 
 export const App = () => (
 	<ThemeProvider theme={theme}>
-		<GlobalStyle/>
+		<GlobalStyle />
 		<StyledMain>
 			<Header />
 			<InputandFilterPanel />
@@ -16,8 +16,8 @@ export const App = () => (
 	</ThemeProvider>
 );
 
-
 const StyledMain = styled.main`
 	display: flex;
 	flex-direction: column;
+	background-color: ${(props) => props.theme.colors.veryLightGray};
 `;

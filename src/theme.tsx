@@ -11,6 +11,7 @@ export const theme = {
 		sizes: {
 			s: "0.875rem",
 			m: "1rem",
+			l: "1.5rem"
 		},
 		family: {
 			basic: "Nunito Sans",
