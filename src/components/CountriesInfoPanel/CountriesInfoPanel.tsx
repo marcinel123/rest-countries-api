@@ -1,1 +1,5 @@
-export const CountriesInfoPanel = () => <div>CountriesInfoPanel</div>;
+import { StyledDisplaySection } from "./CountriesInfoPanel.styles";
+
+export const CountriesInfoPanel = () => (
+	<StyledDisplaySection>CountriesInfoPanel</StyledDisplaySection>
+);
