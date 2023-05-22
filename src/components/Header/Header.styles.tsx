@@ -21,7 +21,7 @@ export const StyledModeButton = styled.button`
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
-	padding: 10px;
+	padding: 10px 0px 10px 10px;
 	border: none;
 	background-color: white;
 	@media screen and (min-width: 550px) {

@@ -11,7 +11,8 @@
 		"airbnb-typescript",
 		"eslint:recommended",
 		"plugin:react/jsx-runtime",
-		"prettier"
+		"prettier",
+		"plugin:storybook/recommended"
 	],
 	"overrides": [],
 	"parserOptions": {
@@ -29,12 +30,24 @@
 		"no-use-before-define": 0,
 		"@typescript-eslint/no-use-before-define": 0,
 		"quotes": ["error", "double"],
-		"no-multiple-empty-lines": ["error", { "max": 3, "maxEOF": 0 }],
-		"no-console": ["error", { "allow": [""] }],
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 3,
+				"maxEOF": 0
+			}
+		],
+		"no-console": [
+			"error",
+			{
+				"allow": [""]
+			}
+		],
 		"import/prefer-default-export": 0,
 		"react/function-component-definition": 0,
 		"react/self-closing-comp": 0,
 		"prettier/prettier": 0,
-		"jsx-a11y/label-has-associated-control": 0
+		"jsx-a11y/label-has-associated-control": 0,
+		"react/jsx-props-no-spreading": 0
 	}
 }
