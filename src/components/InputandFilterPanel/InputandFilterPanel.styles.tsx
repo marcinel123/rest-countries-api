@@ -7,7 +7,7 @@ export const StyledInputandFilterSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: start;
-	@media screen and (min-width: 550px) {
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
@@ -16,7 +16,7 @@ export const StyledInputandFilterSection = styled.section`
 
 export const StyledForm = styled.form`
 	width: 100%;
-	@media screen and (min-width: 550px) {
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		width: 40%;
 	}
 `;
@@ -28,29 +28,30 @@ export const StyledInputLabel = styled.label`
 export const StyledInputElement = styled.input`
 	border: none;
 	width: 100%;
-	padding: 4% 0;
+	padding: 20px 10px;
 	margin-bottom: 10%;
 
 	::placeholder {
 		background-image: url(${searchIcon});
 		background-repeat: no-repeat;
-		color: #b8b8b8;
-		padding-left: 5%;
-		@media screen and (min-width: 550px) {
-			padding-left: 10%;
+		color: ${(props) => props.theme.colors.darkGray};
+		padding-left: 30px;
+		@media screen and (min-width: ${(props) =>
+				props.theme.breakpoints.medium}) {
+			padding-left: 35px;
 		}
 	}
 	:focus {
 		::placeholder {
 			background-image: none;
-			color: white;
+			color: ${(props) => props.theme.colors.white};
 		}
 	}
-	@media screen and (min-width: 550px) {
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		margin-bottom: 0;
 		width: 100%;
 		max-height: 58px;
-		padding: 4% 15px;
+		padding: 20px 15px;
 	}
 `;
 export const StyledCountriesSelectLabel = styled.label`
@@ -61,5 +62,5 @@ export const StyledCountriesSelectLabel = styled.label`
 export const StyledCountriesSelect = styled.select`
 	border: none;
 	width: 100%;
-	padding: 7%;
+	padding: 18px;
 `;

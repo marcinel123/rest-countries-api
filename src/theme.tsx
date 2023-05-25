@@ -1,4 +1,7 @@
 export const theme = {
+	breakpoints: {
+		medium: "550px",
+	},
 	colors: {
 		darkBlue: "#2b3945",
 		veryDarkBlueBg: "#202C37",
@@ -11,7 +14,7 @@ export const theme = {
 		sizes: {
 			s: "0.875rem",
 			m: "1rem",
-			l: "1.5rem"
+			l: "1.5rem",
 		},
 		family: {
 			basic: "Nunito Sans",

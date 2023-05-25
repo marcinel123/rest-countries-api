@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
 export const StyledH2 = styled.h2`
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
-	@media screen and (min-width: 550px) {
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		font-size: ${(props) => props.theme.fonts.sizes.l};
 	}
 `;
@@ -21,10 +21,10 @@ export const StyledModeButton = styled.button`
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
-	padding: 10px 0px 10px 10px;
+	padding: 10px 0 10px 10px;
 	border: none;
-	background-color: white;
-	@media screen and (min-width: 550px) {
+	background-color: ${(props) => props.theme.colors.white};
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		font-size: ${(props) => props.theme.fonts.sizes.l};
 	}
 `;

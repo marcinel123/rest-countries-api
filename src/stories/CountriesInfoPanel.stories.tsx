@@ -6,10 +6,3 @@ export default {
 };
 
 export const Default = () => <CountriesInfoPanel />;
-
-// const Template = (args) => <Template {...args} />;
-
-// export const Red = Template.bind({});
-// Red.args = {
-// 	backgroundColor: "blue",
-// };

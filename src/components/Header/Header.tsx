@@ -9,10 +9,7 @@ export const Header = () => (
 	<StyledHeader>
 		<StyledH2>Where in the world?</StyledH2>
 		<StyledModeButton type="button">
-			<StyledButtonIcon
-				className="fa-regular fa-moon"
-				style={{ color: "#0d0d0d" }}
-			></StyledButtonIcon>
+			<StyledButtonIcon className="fa-regular fa-moon"></StyledButtonIcon>
 			Dark Mode
 		</StyledModeButton>
 	</StyledHeader>
