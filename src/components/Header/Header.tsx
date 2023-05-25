@@ -1,6 +1,16 @@
+import {
+	StyledIcon,
+	StyledH2,
+	StyledHeader,
+	ThemeSwitchButton,
+} from "./Header.styles";
+
 export const Header = () => (
-	<>
-		<h2>Where in the world?</h2>
-		<button type="button">Dark Mode</button>
-	</>
+	<StyledHeader>
+		<StyledH2>Where in the world?</StyledH2>
+		<ThemeSwitchButton type="button">
+			<StyledIcon className="fa-regular fa-moon"></StyledIcon>
+			Dark Mode
+		</ThemeSwitchButton>
+	</StyledHeader>
 );
