@@ -13,7 +13,7 @@ export const InputandFilterPanel = () => (
 			<StyledInputLabel htmlFor="country_search">
 				<StyledInputElement
 					id="country_search"
-					placeholder="Search for a conutry"
+					placeholder="Search for a country"
 				/>
 			</StyledInputLabel>
 		</StyledForm>

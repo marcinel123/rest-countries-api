@@ -17,7 +17,7 @@ export const StyledH2 = styled.h2`
 	}
 `;
 
-export const StyledModeButton = styled.button`
+export const ThemeSwitchButton = styled.button`
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
@@ -28,7 +28,7 @@ export const StyledModeButton = styled.button`
 		font-size: ${(props) => props.theme.fonts.sizes.l};
 	}
 `;
-export const StyledButtonIcon = styled.i`
+export const StyledIcon = styled.i`
 	margin: 0 10px;
 	transform: rotate(-30deg);
 `;

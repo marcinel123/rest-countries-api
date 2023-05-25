@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { Header } from "./components/Header/Header";
 import { InputandFilterPanel } from "./components/InputandFilterPanel/InputandFilterPanel";
-import { CountriesInfoPanel } from "./components/CountriesInfoPanel/CountriesInfoPanel";
+import { CountriesInfoPanel } from "./components/CountriesInfoPanel/CountriesList";
 import { GlobalStyle } from "./GlobalStyles";
 
 export const App = () => (

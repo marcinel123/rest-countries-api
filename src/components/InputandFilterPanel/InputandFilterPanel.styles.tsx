@@ -57,10 +57,12 @@ export const StyledInputElement = styled.input`
 export const StyledCountriesSelectLabel = styled.label`
 	width: 20%;
 	min-width: 145px;
+	background-color: ${(props) => props.theme.colors.white};
+	text-align: center;
 `;
 
 export const StyledCountriesSelect = styled.select`
 	border: none;
-	width: 100%;
-	padding: 18px;
+	width: 90%;
+	padding: 18px 5px;
 `;
