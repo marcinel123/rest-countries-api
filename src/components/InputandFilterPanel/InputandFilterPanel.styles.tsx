@@ -21,6 +21,7 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledInputLabel = styled.label`
+	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	border-radius: 5px;
 	background-color: ${(props) => props.theme.colors.white};
 	display: flex;
