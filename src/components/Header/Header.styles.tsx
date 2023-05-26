@@ -25,7 +25,7 @@ export const ThemeSwitchButton = styled.button`
 	border: none;
 	background-color: ${(props) => props.theme.colors.white};
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		font-size: ${(props) => props.theme.fonts.sizes.l};
+		font-size: ${(props) => props.theme.fonts.sizes.m};
 	}
 `;
 export const StyledIcon = styled.i`
