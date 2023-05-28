@@ -1,4 +1,5 @@
 import {
+	InputImage,
 	StyledCountriesSelect,
 	StyledCountriesSelectLabel,
 	StyledForm,
@@ -6,14 +7,16 @@ import {
 	StyledInputLabel,
 	StyledInputandFilterSection,
 } from "./InputandFilterPanel.styles";
+import searchIcon from "../../images/search.png";
 
 export const InputandFilterPanel = () => (
 	<StyledInputandFilterSection>
 		<StyledForm>
 			<StyledInputLabel htmlFor="country_search">
+				<InputImage src={searchIcon} alt="" />
 				<StyledInputElement
 					id="country_search"
-					placeholder="Search for a country"
+					placeholder="Search for a country..."
 				/>
 			</StyledInputLabel>
 		</StyledForm>
