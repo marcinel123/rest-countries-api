@@ -1,37 +1,53 @@
+import { useState } from "react";
 import {
+	CountryOption,
+	FilterButton,
 	InputImage,
-	StyledCountriesSelect,
-	StyledCountriesSelectLabel,
+	StyledDivWithOption,
+	StyledFilterPanel,
 	StyledForm,
+	StyledImg,
 	StyledInputElement,
 	StyledInputLabel,
 	StyledInputandFilterSection,
 } from "./InputandFilterPanel.styles";
 import searchIcon from "../../images/search.png";
+import arrowIcon from "../../images/arrow.png";
 
-export const InputandFilterPanel = () => (
-	<StyledInputandFilterSection>
-		<StyledForm>
-			<StyledInputLabel htmlFor="country_search">
-				<InputImage src={searchIcon} alt="" />
-				<StyledInputElement
-					id="country_search"
-					placeholder="Search for a country..."
-				/>
-			</StyledInputLabel>
-		</StyledForm>
+export const InputandFilterPanel = () => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-		<StyledCountriesSelectLabel htmlFor="continents">
-			<StyledCountriesSelect name="continents" id="continents">
-				<option value="" selected disabled hidden>
-					Filter by region
-				</option>
-				<option value="Africa">Africa</option>
-				<option value="America">America</option>
-				<option value="Asia">Asia</option>
-				<option value="Europa">Europa</option>
-				<option value="Oceania">Oceania</option>
-			</StyledCountriesSelect>
-		</StyledCountriesSelectLabel>
-	</StyledInputandFilterSection>
-);
+	const MenuToggle = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
+	return (
+		<StyledInputandFilterSection>
+			<StyledForm>
+				<StyledInputLabel htmlFor="country_search">
+					<InputImage src={searchIcon} alt="" />
+					<StyledInputElement
+						id="country_search"
+						placeholder="Search for a country..."
+					/>
+				</StyledInputLabel>
+			</StyledForm>
+
+			<StyledFilterPanel>
+				<span>Filter by Region</span>
+				<FilterButton type="button" onClick={MenuToggle}>
+					<StyledImg src={arrowIcon} alt=""></StyledImg>
+				</FilterButton>
+				{isMenuOpen ? (
+					<StyledDivWithOption>
+						<CountryOption>Africa</CountryOption>
+						<CountryOption>America</CountryOption>
+						<CountryOption>Asia</CountryOption>
+						<CountryOption>Europa</CountryOption>
+						<CountryOption>Oceania</CountryOption>
+					</StyledDivWithOption>
+				) : null}
+			</StyledFilterPanel>
+		</StyledInputandFilterSection>
+	);
+};
