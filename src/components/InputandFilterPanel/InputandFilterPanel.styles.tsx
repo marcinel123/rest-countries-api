@@ -80,6 +80,7 @@ export const StyledFilterPanel = styled.div`
 	background-color: ${(props) => props.theme.colors.white};
 	width: 15%;
 	min-width: 170px;
+	max-width: 175px;
 	display: flex;
 	justify-content: space-around;
 	padding: 20px 10px;
@@ -92,7 +93,6 @@ export const StyledFilterPanel = styled.div`
 
 export const FilterButton = styled.button`
 	border: none;
-	outline: none;
 	background-color: ${(props) => props.theme.colors.white};
 `;
 export const StyledImg = styled.img`
@@ -100,7 +100,7 @@ export const StyledImg = styled.img`
 	max-height: 12px;
 `;
 
-export const StyledDivWithOption = styled.div`
+export const StyledCustomSelect = styled.ul`
 	margin-top: 42px;
 	display: block;
 	position: absolute;
@@ -113,11 +113,12 @@ export const StyledDivWithOption = styled.div`
 	padding: 10px 0;
 `;
 
-export const CountryOption = styled.p`
+export const ContinentOption = styled.li`
 	:hover {
 		background-color: ${(props) => props.theme.colors.veryLightGray};
 	}
 	margin: 5px 0;
 	box-sizing: border-box;
 	padding: 0 0 0 20px;
+	list-style: none;
 `;

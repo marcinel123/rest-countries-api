@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
-	CountryOption,
+	ContinentOption,
 	FilterButton,
 	InputImage,
-	StyledDivWithOption,
+	StyledCustomSelect,
 	StyledFilterPanel,
 	StyledForm,
 	StyledImg,
@@ -14,11 +14,24 @@ import {
 import searchIcon from "../../images/search.png";
 import arrowIcon from "../../images/arrow.png";
 
+const ContinentsArray = [
+	{ id: 1, name: "Africa" },
+	{ id: 2, name: "America" },
+	{ id: 3, name: "Asia" },
+	{ id: 4, name: "Europe" },
+	{ id: 5, name: "Oceania" },
+];
+
 export const InputandFilterPanel = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [selectOption, setSelectOption] = useState("Filter by Region");
 
 	const MenuToggle = () => {
-		setIsMenuOpen(!isMenuOpen);
+		setIsMenuOpen((prevState) => !prevState);
+	};
+
+	const SelectOptionsHandle = (e: React.ChangeEvent<HTMLLIElement>) => {
+		setSelectOption(e.target.innerText);
 	};
 
 	return (
@@ -33,19 +46,22 @@ export const InputandFilterPanel = () => {
 				</StyledInputLabel>
 			</StyledForm>
 
-			<StyledFilterPanel>
-				<span>Filter by Region</span>
-				<FilterButton type="button" onClick={MenuToggle}>
-					<StyledImg src={arrowIcon} alt=""></StyledImg>
+			<StyledFilterPanel onClick={MenuToggle}>
+				<span>{selectOption}</span>
+				<FilterButton type="button">
+					<StyledImg
+						src={arrowIcon}
+						alt="button to open continents select"
+					></StyledImg>
 				</FilterButton>
 				{isMenuOpen ? (
-					<StyledDivWithOption>
-						<CountryOption>Africa</CountryOption>
-						<CountryOption>America</CountryOption>
-						<CountryOption>Asia</CountryOption>
-						<CountryOption>Europa</CountryOption>
-						<CountryOption>Oceania</CountryOption>
-					</StyledDivWithOption>
+					<StyledCustomSelect>
+						{ContinentsArray.map(({ name, id }) => (
+							<ContinentOption key={id} onClick={(e) => SelectOptionsHandle(e)}>
+								{name}
+							</ContinentOption>
+						))}
+					</StyledCustomSelect>
 				) : null}
 			</StyledFilterPanel>
 		</StyledInputandFilterSection>
