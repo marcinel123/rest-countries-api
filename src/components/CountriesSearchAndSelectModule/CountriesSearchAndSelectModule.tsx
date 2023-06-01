@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-	ContinentOption,
 	FilterButton,
 	InputImage,
-	StyledCustomSelect,
 	StyledFilterPanel,
 	StyledForm,
 	StyledImg,
 	StyledInputElement,
 	StyledInputLabel,
-	StyledInputandFilterSection,
-} from "./InputandFilterPanel.styles";
+	StyledInputandSelectSection,
+} from "./CountriesSearchAndSelectModule.styles";
 import searchIcon from "../../images/search.png";
 import arrowIcon from "../../images/arrow.png";
+import { CustomSelect } from "./CustomSelect";
 
-const ContinentsArray = [
+const continentsArray = [
 	{ id: 1, name: "Africa" },
 	{ id: 2, name: "America" },
 	{ id: 3, name: "Asia" },
@@ -22,7 +21,7 @@ const ContinentsArray = [
 	{ id: 5, name: "Oceania" },
 ];
 
-export const InputandFilterPanel = () => {
+export const CountriesSearchAndSelectModule = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [selectOption, setSelectOption] = useState("Filter by Region");
 
@@ -30,12 +29,8 @@ export const InputandFilterPanel = () => {
 		setIsMenuOpen((prevState) => !prevState);
 	};
 
-	const SelectOptionsHandle = (e: React.ChangeEvent<HTMLLIElement>) => {
-		setSelectOption(e.target.innerText);
-	};
-
 	return (
-		<StyledInputandFilterSection>
+		<StyledInputandSelectSection>
 			<StyledForm>
 				<StyledInputLabel htmlFor="country_search">
 					<InputImage src={searchIcon} alt="" />
@@ -54,16 +49,13 @@ export const InputandFilterPanel = () => {
 						alt="button to open continents select"
 					></StyledImg>
 				</FilterButton>
-				{isMenuOpen ? (
-					<StyledCustomSelect>
-						{ContinentsArray.map(({ name, id }) => (
-							<ContinentOption key={id} onClick={(e) => SelectOptionsHandle(e)}>
-								{name}
-							</ContinentOption>
-						))}
-					</StyledCustomSelect>
-				) : null}
+				{isMenuOpen && (
+					<CustomSelect
+						data={continentsArray}
+						setSelectOption={setSelectOption}
+					/>
+				)}
 			</StyledFilterPanel>
-		</StyledInputandFilterSection>
+		</StyledInputandSelectSection>
 	);
 };

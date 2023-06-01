@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledInputandFilterSection = styled.section`
+export const StyledInputandSelectSection = styled.section`
 	padding: 20px 40px;
 	width: 100%;
 	display: flex;
@@ -98,27 +98,4 @@ export const FilterButton = styled.button`
 export const StyledImg = styled.img`
 	max-width: 12px;
 	max-height: 12px;
-`;
-
-export const StyledCustomSelect = styled.ul`
-	margin-top: 42px;
-	display: block;
-	position: absolute;
-	background-color: ${(props) => props.theme.colors.white};
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-	width: 100%;
-	border-radius: 5px;
-	padding: 10px 0;
-`;
-
-export const ContinentOption = styled.li`
-	:hover {
-		background-color: ${(props) => props.theme.colors.veryLightGray};
-	}
-	margin: 5px 0;
-	box-sizing: border-box;
-	padding: 0 0 0 20px;
-	list-style: none;
 `;
