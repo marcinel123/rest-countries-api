@@ -1,8 +1,8 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { Header } from "./components/Header/Header";
-import { CountriesSearchAndSelectModule } from "./components/CountriesSearchAndSelectModule/CountriesSearchAndSelectModule";
-import { CountriesList } from "./components/CountriesInfoPanel/CountriesList";
+import { FormPanel } from "./components/FormPanel/FormPanel";
+import { CountriesList } from "./components/CountriesList/CountriesList";
 import { GlobalStyle } from "./GlobalStyles";
 
 export const App = () => (
@@ -10,7 +10,7 @@ export const App = () => (
 		<GlobalStyle />
 		<StyledMain>
 			<Header />
-			<CountriesSearchAndSelectModule />
+			<FormPanel />
 			<CountriesList />
 		</StyledMain>
 	</ThemeProvider>
