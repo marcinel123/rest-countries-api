@@ -1,25 +1,5 @@
 import styled from "styled-components";
 
-export const StyledInputandFilterSection = styled.section`
-	padding: 20px 40px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-`;
-
-export const StyledForm = styled.form`
-	width: 100%;
-	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		width: 35%;
-	}
-`;
-
 export const StyledInputLabel = styled.label`
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	border-radius: 5px;
@@ -65,18 +45,4 @@ export const InputImage = styled.img`
 	margin-left: 5%;
 	max-width: 15px;
 	max-height: 15px;
-`;
-
-export const StyledCountriesSelectLabel = styled.label`
-	border-radius: 5px;
-	width: 20%;
-	min-width: 145px;
-	background-color: ${(props) => props.theme.colors.white};
-	text-align: center;
-`;
-
-export const StyledCountriesSelect = styled.select`
-	border: none;
-	width: 90%;
-	padding: 18px 5px;
 `;

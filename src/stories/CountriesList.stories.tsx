@@ -1,4 +1,4 @@
-import { CountriesList } from "../components/CountriesInfoPanel/CountriesList";
+import { CountriesList } from "../components/CountriesList/CountriesList";
 
 export default {
 	title: "CountriesInfo",
