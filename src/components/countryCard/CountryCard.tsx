@@ -1,5 +1,11 @@
 import { CountriesProps } from "../CountriesList/CountriesProps";
-import { StyledCountryCard } from "./CountryCard.styles";
+import {
+	StyledCardFlagImage,
+	StyledCountryCard,
+	StyledCountryName,
+	StyledDivWithCountryInfo,
+	StyledParagraphWithCountryDetails,
+} from "./CountryCard.styles";
 
 export const CountryCard = ({
 	name,
@@ -9,10 +15,21 @@ export const CountryCard = ({
 	capital,
 }: CountriesProps) => (
 	<StyledCountryCard>
-		<img src={flags.svg} alt={flags.alt} />
-		<p>{name.common}</p>
-		<p>Population:{population}</p>
-		<p>Region:{region}</p>
-		<p>Capital: {capital}</p>
+		<StyledCardFlagImage src={flags.svg} alt={flags.alt} />
+		<StyledDivWithCountryInfo>
+			<StyledCountryName>{name.common}</StyledCountryName>
+			<StyledParagraphWithCountryDetails>
+				<strong>Population: </strong>
+				{population}
+			</StyledParagraphWithCountryDetails>
+			<StyledParagraphWithCountryDetails>
+				<strong>Region: </strong>
+				{region}
+			</StyledParagraphWithCountryDetails>
+			<StyledParagraphWithCountryDetails>
+				<strong>Capital: </strong>
+				{capital}
+			</StyledParagraphWithCountryDetails>
+		</StyledDivWithCountryInfo>
 	</StyledCountryCard>
 );
