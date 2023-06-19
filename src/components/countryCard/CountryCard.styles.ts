@@ -9,12 +9,20 @@ export const StyledCountryCard = styled.div`
 	justify-content: space-between;
 	flex-direction: column;
 	width: 70%;
+	min-width: 19rem;
 	height: 24rem;
 	overflow: hidden;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		width: 12rem;
+		flex-basis: 16%;
 		height: 14rem;
-		margin: 10px 20px;
+		margin: 10px 60px;
+		max-width: 18rem;
+		min-width: 14rem;
+	}
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.large}) {
+		margin: 10px 60px;
+		max-width: 22rem;
+		flex-basis: 25%;
 	}
 `;
 
@@ -44,7 +52,7 @@ export const StyledCountryName = styled.h4`
 	font-size: ${(props) => props.theme.fonts.sizes.m};
 	margin: 15px 0;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		font-size: ${(props) => props.theme.fonts.sizes.s};
+		font-size: ${(props) => props.theme.fonts.sizes.m};
 		margin-bottom: 10px;
 		margin-top: 0;
 	}
@@ -55,7 +63,7 @@ export const StyledParagraphWithCountryDetails = styled.p`
 	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	font-size: ${(props) => props.theme.fonts.sizes.s};
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		font-size: ${(props) => props.theme.fonts.sizes.xs};
+		font-size: ${(props) => props.theme.fonts.sizes.s};
 		margin: 2px 0;
 	}
 `;

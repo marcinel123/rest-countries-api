@@ -1,6 +1,7 @@
 export const theme = {
 	breakpoints: {
 		medium: "550px",
+		large: "2000px",
 	},
 	colors: {
 		darkBlue: "#2b3945",
@@ -13,8 +14,8 @@ export const theme = {
 	fonts: {
 		sizes: {
 			xs: "0.6rem",
-			s: "0.875rem",
-			m: "1rem",
+			s: "0.775rem",
+			m: "0.9rem",
 			l: "1.5rem",
 		},
 		family: {
