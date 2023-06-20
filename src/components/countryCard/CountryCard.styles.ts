@@ -14,10 +14,10 @@ export const StyledCountryCard = styled.div`
 	overflow: hidden;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		flex-basis: 16%;
-		height: 14rem;
-		margin: 10px 60px;
-		max-width: 18rem;
-		min-width: 14rem;
+		height: 20rem;
+		margin: 10px 40px;
+		max-width: 22rem;
+		min-width: 18rem;
 	}
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.large}) {
 		margin: 10px 60px;
@@ -31,8 +31,12 @@ export const StyledCardFlagImage = styled.img`
 	height: 50%;
 	object-fit: cover;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		height: 45%;
+		height: 50%;
 	}
+`;
+
+export const StyledSpanWithCategoryName = styled.span`
+	font-weight: ${(props) => props.theme.fonts.weight.extraBold};
 `;
 
 export const StyledDivWithCountryInfo = styled.div`
@@ -42,7 +46,7 @@ export const StyledDivWithCountryInfo = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 20px;
-	justify-content: flex-start;
+	justify-content: center;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		padding: 5px 20px;
 	}

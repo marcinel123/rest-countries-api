@@ -5,6 +5,7 @@ import {
 	StyledCountryName,
 	StyledDivWithCountryInfo,
 	StyledParagraphWithCountryDetails,
+	StyledSpanWithCategoryName,
 } from "./CountryCard.styles";
 
 export const CountryCard = ({
@@ -19,15 +20,15 @@ export const CountryCard = ({
 		<StyledDivWithCountryInfo>
 			<StyledCountryName>{name.common}</StyledCountryName>
 			<StyledParagraphWithCountryDetails>
-				<strong>Population: </strong>
+				<StyledSpanWithCategoryName>Population: </StyledSpanWithCategoryName>
 				{population}
 			</StyledParagraphWithCountryDetails>
 			<StyledParagraphWithCountryDetails>
-				<strong>Region: </strong>
+				<StyledSpanWithCategoryName>Region: </StyledSpanWithCategoryName>
 				{region}
 			</StyledParagraphWithCountryDetails>
 			<StyledParagraphWithCountryDetails>
-				<strong>Capital: </strong>
+				<StyledSpanWithCategoryName>Capital: </StyledSpanWithCategoryName>
 				{capital}
 			</StyledParagraphWithCountryDetails>
 		</StyledDivWithCountryInfo>
