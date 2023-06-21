@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCountryCard = styled.div`
-	border-radius: 10px;
+	border-radius: 7px;
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	background-color: ${(props) => props.theme.colors.white};
 	margin: 20px;
@@ -15,14 +15,15 @@ export const StyledCountryCard = styled.div`
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		flex-basis: 16%;
 		height: 20rem;
-		margin: 10px 40px;
+		margin: 40px;
 		max-width: 22rem;
 		min-width: 18rem;
 	}
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.large}) {
-		margin: 10px 60px;
+		margin: 40px 60px;
 		max-width: 22rem;
 		flex-basis: 25%;
+		height: 24rem;
 	}
 `;
 
