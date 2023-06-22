@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledInputandSelectSection = styled.section`
-	padding: 20px 40px;
+	margin-top: 15px;
+	padding: 25px 45px 10px 45px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;

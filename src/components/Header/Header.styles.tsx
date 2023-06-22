@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.nav`
-	padding: 20px 40px;
+	padding: 20px 45px;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
