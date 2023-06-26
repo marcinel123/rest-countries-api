@@ -1,14 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { StyledDisplaySection } from "./CountriesList.styles";
 import { CountryCard } from "../countryCard/CountryCard";
 import { useFetchCountries } from "../../api/useFetchCountries";
+import { useCountriesContext } from "../../Context/CountriesDataContext";
 
 export const CountriesList = () => {
-	const { error, countries, fetchCountries } = useFetchCountries();
+	// const { error, countries, fetchCountries } = useFetchCountries();
+	// console.log(countries);
 
-	useEffect(() => {
-		fetchCountries();
-	}, []);
+	// useEffect(() => {
+	// 	fetchCountries();
+	// }, []);
+
+	const countriesData = useCountriesContext();
+	console.log(countriesData);
 
 	return (
 		<>
