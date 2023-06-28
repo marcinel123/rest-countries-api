@@ -7,7 +7,15 @@ import {
 } from "react";
 import { useFetchCountries } from "../api/useFetchCountries";
 
-export const CountriesContext = createContext({});
+interface ContextProps {
+	error: unknown;
+	countries: [];
+}
+
+export const CountriesContext = createContext<ContextProps>({
+	error: null,
+	countries: [],
+});
 
 export const useCountriesContext = () => {
 	const contextData = useContext(CountriesContext);
@@ -21,7 +29,9 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 		fetchCountries();
 	}, []);
 
-	const contextValues = useMemo(() => [error, countries], [error, countries]);
+	const contextValues = useMemo(() => {
+		return { error, countries };
+	}, [error, countries]);
 
 	return (
 		<CountriesContext.Provider value={contextValues}>

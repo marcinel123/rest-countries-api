@@ -4,7 +4,7 @@ import { useCountriesContext } from "../../Context/CountriesDataContext";
 import { CountriesProps } from "./CountriesProps";
 
 export const CountriesList = () => {
-	const [error, countries] = useCountriesContext();
+	const { error, countries } = useCountriesContext();
 
 	return (
 		<>
