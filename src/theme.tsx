@@ -1,6 +1,6 @@
 export const theme = {
 	breakpoints: {
-		medium: "550px",
+		medium: "736px",
 		large: "2000px",
 	},
 	colors: {

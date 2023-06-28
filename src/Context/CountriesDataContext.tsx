@@ -10,19 +10,18 @@ import { useFetchCountries } from "../api/useFetchCountries";
 export const CountriesContext = createContext({});
 
 export const useCountriesContext = () => {
-	const contextDate = useContext(CountriesContext);
-	return contextDate;
+	const contextData = useContext(CountriesContext);
+	return contextData;
 };
 
 export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 	const { error, countries, fetchCountries } = useFetchCountries();
 
-	const contextValues = useMemo(() => [error, countries], [error, countries]);
-
 	useEffect(() => {
 		fetchCountries();
-		console.log("useEffect called");
 	}, []);
+
+	const contextValues = useMemo(() => [error, countries], [error, countries]);
 
 	return (
 		<CountriesContext.Provider value={contextValues}>

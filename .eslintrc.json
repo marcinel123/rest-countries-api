@@ -50,6 +50,8 @@
 		"jsx-a11y/label-has-associated-control": 0,
 		"react/jsx-props-no-spreading": 0,
 		"import/no-cycle": 0,
-		"react-hooks/rules-of-hooks": 0
+		"react-hooks/rules-of-hooks": 0,
+		"no-unused-expressions": 0,
+		"@typescript-eslint/no-unused-expressions": 0
 	}
 }
