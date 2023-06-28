@@ -14,6 +14,7 @@ export const CountriesList = () => {
 				{countries?.map(
 					({ name, flags, population, region, capital }: CountriesProps) => (
 						<CountryCard
+							key={name.common}
 							name={name}
 							flags={flags}
 							population={population}

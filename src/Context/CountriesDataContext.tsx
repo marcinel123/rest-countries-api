@@ -6,10 +6,11 @@ import {
 	useContext,
 } from "react";
 import { useFetchCountries } from "../api/useFetchCountries";
+import { CountriesProps } from "../components/CountriesList/CountriesProps";
 
 interface ContextProps {
 	error: unknown;
-	countries: [];
+	countries?: CountriesProps[];
 }
 
 export const CountriesContext = createContext<ContextProps>({
