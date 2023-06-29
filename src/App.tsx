@@ -4,6 +4,7 @@ import { Header } from "./components/Header/Header";
 import { FormPanel } from "./components/FormPanel/FormPanel";
 import { CountriesList } from "./components/CountriesList/CountriesList";
 import { GlobalStyle } from "./GlobalStyles";
+import { CountriesDataContext } from "./Context/CountriesDataContext";
 
 export const App = () => (
 	<ThemeProvider theme={theme}>
@@ -11,7 +12,9 @@ export const App = () => (
 		<StyledMain>
 			<Header />
 			<FormPanel />
-			<CountriesList />
+			<CountriesDataContext>
+				<CountriesList />
+			</CountriesDataContext>
 		</StyledMain>
 	</ThemeProvider>
 );
