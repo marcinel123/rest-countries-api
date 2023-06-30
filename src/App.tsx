@@ -6,6 +6,12 @@ import { CountriesList } from "./components/CountriesList/CountriesList";
 import { GlobalStyle } from "./GlobalStyles";
 import { CountriesDataContext } from "./Context/CountriesDataContext";
 
+const StyledMain = styled.main`
+	display: flex;
+	flex-direction: column;
+	background-color: ${(props) => props.theme.colors.veryLightGray};
+`;
+
 export const App = () => (
 	<ThemeProvider theme={theme}>
 		<GlobalStyle />
@@ -18,9 +24,3 @@ export const App = () => (
 		</StyledMain>
 	</ThemeProvider>
 );
-
-const StyledMain = styled.main`
-	display: flex;
-	flex-direction: column;
-	background-color: ${(props) => props.theme.colors.veryLightGray};
-`;
