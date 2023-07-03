@@ -12,15 +12,17 @@ const StyledMain = styled.main`
 	background-color: ${(props) => props.theme.colors.veryLightGray};
 `;
 
-export const App = () => (
-	<ThemeProvider theme={theme}>
-		<GlobalStyle />
-		<StyledMain>
-			<Header />
-			<FormPanel />
-			<CountriesDataContext>
-				<CountriesList />
-			</CountriesDataContext>
-		</StyledMain>
-	</ThemeProvider>
-);
+export const App = () => {
+	return (
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<StyledMain>
+				<Header />
+				<CountriesDataContext>
+					<FormPanel />
+					<CountriesList />
+				</CountriesDataContext>
+			</StyledMain>
+		</ThemeProvider>
+	);
+};
