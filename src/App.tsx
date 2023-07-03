@@ -14,15 +14,15 @@ const StyledMain = styled.main`
 
 export const App = () => {
 	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-			<StyledMain>
-				<Header />
-				<CountriesDataContext>
+		<CountriesDataContext>
+			<ThemeProvider theme={theme}>
+				<GlobalStyle />
+				<StyledMain>
+					<Header />
 					<FormPanel />
 					<CountriesList />
-				</CountriesDataContext>
-			</StyledMain>
-		</ThemeProvider>
+				</StyledMain>
+			</ThemeProvider>
+		</CountriesDataContext>
 	);
 };

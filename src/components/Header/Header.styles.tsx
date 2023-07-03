@@ -6,7 +6,10 @@ export const StyledHeader = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) =>
+		props.darkTheme
+			? props.theme.colors.veryDarkBlueBg
+			: props.theme.colors.white};
 `;
 
 export const StyledH2 = styled.h2`

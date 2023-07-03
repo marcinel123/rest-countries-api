@@ -14,6 +14,8 @@ interface ContextProps {
 	countries?: CountriesProps[];
 	selectCountryRegion: string;
 	setSelectCountryRegion: React.Dispatch<React.SetStateAction<string>>;
+	toggleTheme: () => void;
+	darkTheme: boolean;
 }
 
 export const CountriesContext = createContext<ContextProps>({
@@ -21,6 +23,8 @@ export const CountriesContext = createContext<ContextProps>({
 	countries: [],
 	selectCountryRegion: "",
 	setSelectCountryRegion: () => {},
+	toggleTheme: () => {},
+	darkTheme: false,
 });
 
 export const useCountriesContext = () => {
@@ -29,16 +33,35 @@ export const useCountriesContext = () => {
 };
 
 export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
+	const [darkTheme, setDarkTheme] = useState(false);
 	const [selectCountryRegion, setSelectCountryRegion] = useState<string>("");
 	const { error, countries, fetchCountries } = useFetchCountries();
+
+	const toggleTheme = () => {
+		console.log("toggle clicked");
+		setDarkTheme((prevDarkTheme) => !prevDarkTheme);
+	};
 
 	useEffect(() => {
 		fetchCountries();
 	}, []);
 
 	const contextValues = useMemo(() => {
-		return { error, countries, selectCountryRegion, setSelectCountryRegion };
-	}, [error, countries, selectCountryRegion, setSelectCountryRegion]);
+		return {
+			error,
+			countries,
+			selectCountryRegion,
+			setSelectCountryRegion,
+			toggleTheme,
+			darkTheme,
+		};
+	}, [
+		error,
+		countries,
+		selectCountryRegion,
+		setSelectCountryRegion,
+		darkTheme,
+	]);
 
 	return (
 		<CountriesContext.Provider value={contextValues}>
