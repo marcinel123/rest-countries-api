@@ -7,7 +7,7 @@ import {
 	StyledFilterPanel,
 	StyledImg,
 } from "./CustomSelect.styles";
-import { useSelectCountriesContext } from "../../../Context/CountriesDataContext";
+import { useCountriesContext } from "../../../Context/CountriesDataContext";
 
 export interface CustomSelectProps {
 	data: {
@@ -19,7 +19,7 @@ export interface CustomSelectProps {
 export const CustomSelect = ({ data }: CustomSelectProps) => {
 	const [selectOption, setSelectOption] = useState("Filter by Region");
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { setSelectCountryRegion } = useSelectCountriesContext();
+	const { setSelectCountryRegion } = useCountriesContext();
 
 	const menuToggle = () => {
 		setIsMenuOpen((prevState) => !prevState);

@@ -12,31 +12,20 @@ import { CountriesProps } from "../components/CountriesList/CountriesProps";
 interface ContextProps {
 	error: unknown;
 	countries?: CountriesProps[];
-}
-
-interface SelectCountriesContextProps {
 	selectCountryRegion: string;
 	setSelectCountryRegion: React.Dispatch<React.SetStateAction<string>>;
 }
-export const SelectCountriesContext =
-	createContext<SelectCountriesContextProps>({
-		selectCountryRegion: "",
-		setSelectCountryRegion: () => {},
-	});
 
 export const CountriesContext = createContext<ContextProps>({
 	error: null,
 	countries: [],
+	selectCountryRegion: "",
+	setSelectCountryRegion: () => {},
 });
 
 export const useCountriesContext = () => {
 	const contextData = useContext(CountriesContext);
 	return contextData;
-};
-
-export const useSelectCountriesContext = () => {
-	const selectedCountry = useContext(SelectCountriesContext);
-	return selectedCountry;
 };
 
 export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
@@ -48,18 +37,12 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 	}, []);
 
 	const contextValues = useMemo(() => {
-		return { error, countries };
-	}, [error, countries]);
-
-	const selectedCountryContext = useMemo(() => {
-		return { selectCountryRegion, setSelectCountryRegion };
-	}, [selectCountryRegion, setSelectCountryRegion]);
+		return { error, countries, selectCountryRegion, setSelectCountryRegion };
+	}, [error, countries, selectCountryRegion, setSelectCountryRegion]);
 
 	return (
 		<CountriesContext.Provider value={contextValues}>
-			<SelectCountriesContext.Provider value={selectedCountryContext}>
-				{children}
-			</SelectCountriesContext.Provider>
+			{children}
 		</CountriesContext.Provider>
 	);
 };

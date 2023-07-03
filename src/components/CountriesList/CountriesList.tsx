@@ -1,14 +1,10 @@
 import { StyledDisplaySection } from "./CountriesList.styles";
 import { CountryCard } from "../countryCard/CountryCard";
-import {
-	useCountriesContext,
-	useSelectCountriesContext,
-} from "../../Context/CountriesDataContext";
+import { useCountriesContext } from "../../Context/CountriesDataContext";
 import { CountriesProps } from "./CountriesProps";
 
 export const CountriesList = () => {
-	const { error, countries } = useCountriesContext();
-	const { selectCountryRegion } = useSelectCountriesContext();
+	const { error, countries, selectCountryRegion } = useCountriesContext();
 
 	return (
 		<>
