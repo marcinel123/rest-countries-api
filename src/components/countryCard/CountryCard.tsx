@@ -14,23 +14,25 @@ export const CountryCard = ({
 	population,
 	region,
 	capital,
-}: CountriesProps) => (
-	<StyledCountryCard>
-		<StyledCardFlagImage src={flags.svg} alt={flags.alt} />
-		<StyledDivWithCountryInfo>
-			<StyledCountryName>{name.common}</StyledCountryName>
-			<StyledParagraphWithCountryDetails>
-				<StyledSpanWithCategoryName>Population: </StyledSpanWithCategoryName>
-				{population}
-			</StyledParagraphWithCountryDetails>
-			<StyledParagraphWithCountryDetails>
-				<StyledSpanWithCategoryName>Region: </StyledSpanWithCategoryName>
-				{region}
-			</StyledParagraphWithCountryDetails>
-			<StyledParagraphWithCountryDetails>
-				<StyledSpanWithCategoryName>Capital: </StyledSpanWithCategoryName>
-				{capital}
-			</StyledParagraphWithCountryDetails>
-		</StyledDivWithCountryInfo>
-	</StyledCountryCard>
-);
+}: CountriesProps) => {
+	return (
+		<StyledCountryCard>
+			<StyledCardFlagImage src={flags.svg} alt={flags.alt} />
+			<StyledDivWithCountryInfo>
+				<StyledCountryName>{name.common}</StyledCountryName>
+				<StyledParagraphWithCountryDetails>
+					<StyledSpanWithCategoryName>Population: </StyledSpanWithCategoryName>
+					{population}
+				</StyledParagraphWithCountryDetails>
+				<StyledParagraphWithCountryDetails>
+					<StyledSpanWithCategoryName>Region: </StyledSpanWithCategoryName>
+					{region}
+				</StyledParagraphWithCountryDetails>
+				<StyledParagraphWithCountryDetails>
+					<StyledSpanWithCategoryName>Capital: </StyledSpanWithCategoryName>
+					{capital}
+				</StyledParagraphWithCountryDetails>
+			</StyledDivWithCountryInfo>
+		</StyledCountryCard>
+	);
+};

@@ -6,10 +6,7 @@ export const StyledHeader = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: ${(props) =>
-		props.darkTheme
-			? props.theme.colors.veryDarkBlueBg
-			: props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.background};
 `;
 
 export const StyledH2 = styled.h2`
@@ -26,7 +23,7 @@ export const ThemeSwitchButton = styled.button`
 	font-size: ${(props) => props.theme.fonts.sizes.m};
 	padding: 10px 0 10px 10px;
 	border: none;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.background};
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		font-size: ${(props) => props.theme.fonts.sizes.m};
 	}

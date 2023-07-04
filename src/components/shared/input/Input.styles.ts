@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledInputLabel = styled.label`
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	border-radius: 5px;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.background};
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -20,7 +20,7 @@ export const StyledInputElement = styled.input`
 	padding: 20px 10px;
 
 	::placeholder {
-		color: ${(props) => props.theme.colors.darkGray};
+		color: ${(props) => props.theme.colors.text};
 		font-family: ${(props) => props.theme.fonts.family.basic};
 		font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	}
@@ -28,7 +28,7 @@ export const StyledInputElement = styled.input`
 		outline: none;
 		::placeholder {
 			background-image: none;
-			color: ${(props) => props.theme.colors.white};
+			color: ${(props) => props.theme.colors.text};
 		}
 	}
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {

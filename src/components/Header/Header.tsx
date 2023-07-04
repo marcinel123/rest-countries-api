@@ -1,4 +1,4 @@
-import { useCountriesContext } from "../../Context/CountriesDataContext";
+import { useThemeContext } from "../../Context/ThemeContext";
 import {
 	StyledIcon,
 	StyledH2,
@@ -7,10 +7,10 @@ import {
 } from "./Header.styles";
 
 export const Header = () => {
-	const { toggleTheme, darkTheme } = useCountriesContext();
+	const { toggleTheme } = useThemeContext();
 
 	return (
-		<StyledHeader darkTheme={darkTheme}>
+		<StyledHeader>
 			<StyledH2>Where in the world?</StyledH2>
 			<ThemeSwitchButton onClick={toggleTheme} type="button">
 				<StyledIcon className="fa-regular fa-moon" />
