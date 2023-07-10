@@ -1,4 +1,3 @@
-import { useThemeContext } from "../../Context/ThemeContext";
 import {
 	StyledIcon,
 	StyledH2,
@@ -6,9 +5,11 @@ import {
 	ThemeSwitchButton,
 } from "./Header.styles";
 
-export const Header = () => {
-	const { toggleTheme } = useThemeContext();
+export interface HeaderProps {
+	toggleTheme: () => void;
+}
 
+export const Header = ({ toggleTheme }: HeaderProps) => {
 	return (
 		<StyledHeader>
 			<StyledH2>Where in the world?</StyledH2>

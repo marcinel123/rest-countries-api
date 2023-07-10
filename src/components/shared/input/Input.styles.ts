@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledInputLabel = styled.label`
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	border-radius: 5px;
-	background-color: ${(props) => props.theme.colors.background};
+	background-color: ${(props) => props.theme.colors.elements};
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -15,6 +15,7 @@ export const StyledInputLabel = styled.label`
 `;
 
 export const StyledInputElement = styled.input`
+	background-color: ${(props) => props.theme.colors.elements};
 	border: none;
 	width: 100%;
 	padding: 20px 10px;

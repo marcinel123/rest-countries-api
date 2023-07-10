@@ -20,8 +20,8 @@ export const darkTheme = {
 		},
 		weight: {
 			basic: 300,
-			semiBold: 600,
-			extraBold: 800,
+			semiBold: 400,
+			extraBold: 600,
 		},
 	},
 };

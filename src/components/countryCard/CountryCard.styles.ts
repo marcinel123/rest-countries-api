@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const StyledCountryCard = styled.div`
 	border-radius: 7px;
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
-	background-color: ${(props) => props.theme.colors.background};
+	background-color: ${(props) => props.theme.colors.elements};
+	color: ${(props) => props.theme.colors.text}
 	margin: 20px;
 	display: flex;
 	justify-content: space-between;
@@ -54,6 +55,7 @@ export const StyledDivWithCountryInfo = styled.div`
 `;
 
 export const StyledCountryName = styled.h4`
+	color: ${(props) => props.theme.colors.text};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
 	margin: 15px 0;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
@@ -64,6 +66,7 @@ export const StyledCountryName = styled.h4`
 `;
 
 export const StyledParagraphWithCountryDetails = styled.p`
+	color: ${(props) => props.theme.colors.text};
 	margin: 5px 0;
 	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	font-size: ${(props) => props.theme.fonts.sizes.s};
