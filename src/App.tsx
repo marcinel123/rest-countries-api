@@ -4,9 +4,9 @@ import { Header } from "./components/Header/Header";
 import { FormPanel } from "./components/FormPanel/FormPanel";
 import { CountriesList } from "./components/CountriesList/CountriesList";
 import { GlobalStyle } from "./GlobalStyles";
-import { CountriesDataContext } from "./Context/CountriesDataContext";
+import { CountriesDataContext } from "./context/CountriesDataContext";
 import { darkTheme } from "./darkTheme";
-import { useDarkThemeMode } from "./api/useDarkThemeMode";
+import { useDarkThemeMode } from "./hooks/useDarkThemeMode";
 
 const StyledMain = styled.main`
 	display: flex;

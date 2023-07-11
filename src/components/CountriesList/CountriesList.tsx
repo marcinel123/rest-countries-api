@@ -1,6 +1,6 @@
 import { StyledDisplaySection } from "./CountriesList.styles";
 import { CountryCard } from "../countryCard/CountryCard";
-import { useCountriesContext } from "../../Context/CountriesDataContext";
+import { useCountriesContext } from "../../context/CountriesDataContext";
 import { CountriesProps } from "./CountriesProps";
 
 export const CountriesList = () => {
