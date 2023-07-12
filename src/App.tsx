@@ -22,7 +22,7 @@ export const App = () => {
 			<ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
 				<GlobalStyle />
 				<StyledMain>
-					<Header toggleTheme={toggleTheme} />
+					<Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
 					<FormPanel />
 					<CountriesList />
 				</StyledMain>

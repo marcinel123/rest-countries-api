@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MoonOutline } from "@styled-icons/evaicons-outline/MoonOutline";
+import { Moon } from "@styled-icons/heroicons-solid/Moon";
 
 export const StyledHeader = styled.nav`
 	padding: 20px 45px;
@@ -32,9 +33,16 @@ export const ThemeSwitchButton = styled.button`
 	}
 `;
 
-export const StyledModeIcon = styled(MoonOutline)`
+export const StyledLightModeIcon = styled(MoonOutline)`
 	color: ${(props) => props.theme.colors.text};
 	width: 18px;
 	height: 18px;
+	margin: 0 10px;
+`;
+
+export const StyledDarkModeIcon = styled(Moon)`
+	color: ${(props) => props.theme.colors.text};
+	width: 16px;
+	height: 16px;
 	margin: 0 10px;
 `;
