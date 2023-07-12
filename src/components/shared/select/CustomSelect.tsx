@@ -1,11 +1,11 @@
 import { useState } from "react";
-import arrowIcon from "../../../images/arrow.png";
 import {
 	ContinentOption,
 	FilterButton,
+	StyledArrowIcon,
 	StyledCustomSelect,
 	StyledFilterPanel,
-	StyledImg,
+	StyledSpan,
 } from "./CustomSelect.styles";
 import { useCountriesContext } from "../../../context/CountriesDataContext";
 
@@ -32,9 +32,9 @@ export const CustomSelect = ({ data }: CustomSelectProps) => {
 
 	return (
 		<StyledFilterPanel onClick={menuToggle}>
-			<span>{selectOption}</span>
+			<StyledSpan>{selectOption}</StyledSpan>
 			<FilterButton type="button">
-				<StyledImg src={arrowIcon} alt="button to open continents select" />
+				<StyledArrowIcon />
 			</FilterButton>
 			{isMenuOpen && (
 				<StyledCustomSelect>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Search } from "@styled-icons/bootstrap/Search";
 
 export const StyledInputLabel = styled.label`
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
@@ -41,6 +42,15 @@ export const StyledInputElement = styled.input`
 `;
 
 export const InputImage = styled.img`
+	display: flex;
+	justify-content: center;
+	margin-left: 5%;
+	max-width: 15px;
+	max-height: 15px;
+`;
+
+export const SearchIcon = styled(Search)`
+	color: ${(props) => props.theme.colors.text};
 	display: flex;
 	justify-content: center;
 	margin-left: 5%;

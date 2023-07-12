@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MoonOutline } from "@styled-icons/evaicons-outline/MoonOutline";
 
 export const StyledHeader = styled.nav`
 	padding: 20px 45px;
@@ -30,8 +31,10 @@ export const ThemeSwitchButton = styled.button`
 		font-size: ${(props) => props.theme.fonts.sizes.m};
 	}
 `;
-export const StyledIcon = styled.i`
+
+export const StyledModeIcon = styled(MoonOutline)`
 	color: ${(props) => props.theme.colors.text};
+	width: 18px;
+	height: 18px;
 	margin: 0 10px;
-	transform: rotate(-30deg);
 `;

@@ -1,8 +1,8 @@
 import {
-	StyledIcon,
 	StyledH2,
 	StyledHeader,
 	ThemeSwitchButton,
+	StyledModeIcon,
 } from "./Header.styles";
 
 export interface HeaderProps {
@@ -14,7 +14,7 @@ export const Header = ({ toggleTheme }: HeaderProps) => {
 		<StyledHeader>
 			<StyledH2>Where in the world?</StyledH2>
 			<ThemeSwitchButton onClick={toggleTheme} type="button">
-				<StyledIcon className="fa-regular fa-moon" />
+				<StyledModeIcon />
 				Dark Mode
 			</ThemeSwitchButton>
 		</StyledHeader>

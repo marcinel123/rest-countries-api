@@ -1,5 +1,4 @@
 import { StyledForm, StyledInputandSelectSection } from "./FormPanel.styles";
-import searchIcon from "../../images/search.png";
 import { CustomSelect } from "../shared/select/CustomSelect";
 import { Input } from "../shared/input/Input";
 
@@ -14,12 +13,7 @@ const continentsArray = [
 export const FormPanel = () => (
 	<StyledInputandSelectSection>
 		<StyledForm>
-			<Input
-				alt=""
-				iconSrc={searchIcon}
-				inputId="countrySearch"
-				placeholder="Search for country..."
-			/>
+			<Input inputId="countrySearch" placeholder="Search for country..." />
 		</StyledForm>
 		<CustomSelect data={continentsArray} />
 	</StyledInputandSelectSection>
