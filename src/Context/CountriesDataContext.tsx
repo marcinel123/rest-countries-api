@@ -37,7 +37,12 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 	}, []);
 
 	const contextValues = useMemo(() => {
-		return { error, countries, selectCountryRegion, setSelectCountryRegion };
+		return {
+			error,
+			countries,
+			selectCountryRegion,
+			setSelectCountryRegion,
+		};
 	}, [error, countries, selectCountryRegion, setSelectCountryRegion]);
 
 	return (

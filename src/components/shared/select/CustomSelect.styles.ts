@@ -4,7 +4,7 @@ export const StyledCustomSelect = styled.ul`
 	margin-top: 42px;
 	display: block;
 	position: absolute;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.elements};
 	min-width: 160px;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	z-index: 1;
@@ -15,7 +15,7 @@ export const StyledCustomSelect = styled.ul`
 
 export const ContinentOption = styled.li`
 	:hover {
-		background-color: ${(props) => props.theme.colors.veryLightGray};
+		background-color: ${(props) => props.theme.colors.background};
 	}
 	margin: 5px 0;
 	box-sizing: border-box;
@@ -25,7 +25,7 @@ export const ContinentOption = styled.li`
 
 export const StyledFilterPanel = styled.div`
 	border-radius: 5px;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.elements};
 	width: 15%;
 	min-width: 170px;
 	max-width: 175px;
@@ -41,7 +41,7 @@ export const StyledFilterPanel = styled.div`
 
 export const FilterButton = styled.button`
 	border: none;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.elements};
 `;
 export const StyledImg = styled.img`
 	max-width: 12px;

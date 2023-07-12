@@ -6,10 +6,11 @@ export const StyledHeader = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.elements};
 `;
 
 export const StyledH2 = styled.h2`
+	color: ${(props) => props.theme.colors.text};
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
@@ -18,17 +19,19 @@ export const StyledH2 = styled.h2`
 `;
 
 export const ThemeSwitchButton = styled.button`
+	color: ${(props) => props.theme.colors.text};
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-weight: ${(props) => props.theme.fonts.weight.semiBold};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
 	padding: 10px 0 10px 10px;
 	border: none;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.elements};
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		font-size: ${(props) => props.theme.fonts.sizes.m};
 	}
 `;
 export const StyledIcon = styled.i`
+	color: ${(props) => props.theme.colors.text};
 	margin: 0 10px;
 	transform: rotate(-30deg);
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledInputandSelectSection = styled.section`
+	background-color: ${(props) => props.theme.colors.background};
 	margin-top: 15px;
 	padding: 25px 45px 10px 45px;
 	width: 100%;
@@ -25,6 +26,6 @@ export const StyledCountriesLabel = styled.label`
 	border-radius: 5px;
 	width: 20%;
 	min-width: 145px;
-	background-color: ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.elements};
 	text-align: center;
 `;
