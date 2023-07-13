@@ -20,6 +20,7 @@ export const StyledInputElement = styled.input`
 	border: none;
 	width: 100%;
 	padding: 20px 10px;
+	color: ${(props) => props.theme.colors.text};
 
 	::placeholder {
 		color: ${(props) => props.theme.colors.text};

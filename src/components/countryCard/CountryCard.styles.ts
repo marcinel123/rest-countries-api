@@ -4,7 +4,7 @@ export const StyledCountryCard = styled.div`
 	border-radius: 7px;
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	background-color: ${(props) => props.theme.colors.elements};
-	color: ${(props) => props.theme.colors.text}
+	color: ${(props) => props.theme.colors.text};
 	margin: 20px;
 	display: flex;
 	justify-content: space-between;
