@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ArrowIosDownward } from "@styled-icons/evaicons-solid/ArrowIosDownward";
 
 export const StyledCustomSelect = styled.ul`
 	margin-top: 42px;
@@ -14,10 +15,11 @@ export const StyledCustomSelect = styled.ul`
 `;
 
 export const ContinentOption = styled.li`
+	color: ${(props) => props.theme.colors.text};
 	:hover {
 		background-color: ${(props) => props.theme.colors.background};
 	}
-	margin: 5px 0;
+	margin: 7px 0;
 	box-sizing: border-box;
 	padding: 0 0 0 20px;
 	list-style: none;
@@ -46,4 +48,14 @@ export const FilterButton = styled.button`
 export const StyledImg = styled.img`
 	max-width: 12px;
 	max-height: 12px;
+`;
+
+export const StyledArrowIcon = styled(ArrowIosDownward)`
+	color: ${(props) => props.theme.colors.text};
+	width: 16px;
+	height: 16px;
+`;
+
+export const StyledSpan = styled.span`
+	color: ${(props) => props.theme.colors.text};
 `;
