@@ -14,6 +14,8 @@ interface ContextProps {
 	countries?: CountriesProps[];
 	selectCountryRegion: string;
 	setSelectCountryRegion: React.Dispatch<React.SetStateAction<string>>;
+	inputValue: string;
+	setInputValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const CountriesContext = createContext<ContextProps>({
@@ -21,6 +23,8 @@ export const CountriesContext = createContext<ContextProps>({
 	countries: [],
 	selectCountryRegion: "",
 	setSelectCountryRegion: () => {},
+	inputValue: "",
+	setInputValue: () => {},
 });
 
 export const useCountriesContext = () => {
@@ -29,6 +33,7 @@ export const useCountriesContext = () => {
 };
 
 export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
+	const [inputValue, setInputValue] = useState<string>("");
 	const [selectCountryRegion, setSelectCountryRegion] = useState<string>("");
 	const { error, countries, fetchCountries } = useFetchCountries();
 
@@ -42,8 +47,17 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 			countries,
 			selectCountryRegion,
 			setSelectCountryRegion,
+			inputValue,
+			setInputValue,
 		};
-	}, [error, countries, selectCountryRegion, setSelectCountryRegion]);
+	}, [
+		error,
+		countries,
+		selectCountryRegion,
+		setSelectCountryRegion,
+		inputValue,
+		setInputValue,
+	]);
 
 	return (
 		<CountriesContext.Provider value={contextValues}>
