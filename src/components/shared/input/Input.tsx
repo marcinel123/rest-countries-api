@@ -13,7 +13,7 @@ export interface InputProps {
 
 export const Input = ({ inputId, placeholder }: InputProps) => {
 	const { setInputValue } = useCountriesContext();
-	const inputHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(e.target.value);
 	};
 
@@ -23,7 +23,7 @@ export const Input = ({ inputId, placeholder }: InputProps) => {
 			<StyledInputElement
 				id={inputId}
 				placeholder={placeholder}
-				onChange={inputHandle}
+				onChange={handleInputChange}
 			/>
 		</StyledInputLabel>
 	);
