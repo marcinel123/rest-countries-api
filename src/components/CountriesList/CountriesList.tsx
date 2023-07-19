@@ -1,7 +1,12 @@
-import { StyledDisplaySection, StyledParagraph } from "./CountriesList.styles";
+import {
+	StyledDisplaySection,
+	StyledLink,
+	StyledParagraph,
+} from "./CountriesList.styles";
 import { CountryCard } from "../countryCard/CountryCard";
 import { useCountriesContext } from "../../context/CountriesDataContext";
 import { CountriesProps } from "./CountriesProps";
+import { FormPanel } from "../FormPanel/FormPanel";
 
 export const CountriesList = () => {
 	const { inputValue, error, countries, selectCountryRegion } =
@@ -22,24 +27,31 @@ export const CountriesList = () => {
 	);
 
 	if (!filteredDataByRegionandInput?.length) {
-		return <StyledParagraph>No countries found.</StyledParagraph>;
+		return (
+			<>
+				<FormPanel />
+				<StyledParagraph>No countries found.</StyledParagraph>
+			</>
+		);
 	}
 
 	return (
 		<>
+			<FormPanel />
 			{error && <p>There is an error fetching API.</p>}
 			<StyledDisplaySection>
 				{!countries && "loading"}
 				{filteredDataByRegionandInput?.map(
 					({ name, flags, population, region, capital }: CountriesProps) => (
-						<CountryCard
-							key={name.common}
-							name={name}
-							flags={flags}
-							population={population}
-							region={region}
-							capital={capital}
-						/>
+						<StyledLink to={name.common} key={name.common}>
+							<CountryCard
+								name={name}
+								flags={flags}
+								population={population}
+								region={region}
+								capital={capital}
+							/>
+						</StyledLink>
 					)
 				)}
 			</StyledDisplaySection>
