@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useCountriesContext } from "../../context/CountriesDataContext";
+import { useCountriesContext } from "../../Context/CountriesDataContext";
 
 export const CountryDetails = () => {
 	const { inputValue, setInputValue } = useCountriesContext();

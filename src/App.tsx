@@ -9,7 +9,7 @@ import { lightTheme } from "./lightTheme";
 import { Header } from "./components/Header/Header";
 import { CountriesList } from "./components/CountriesList/CountriesList";
 import { GlobalStyle } from "./GlobalStyles";
-import { CountriesDataContext } from "./context/CountriesDataContext";
+import { CountriesDataContext } from "./Context/CountriesDataContext";
 import { darkTheme } from "./darkTheme";
 import { useDarkThemeMode } from "./hooks/useDarkThemeMode";
 import { CountryDetails } from "./components/countryDetails/CountryDetails";
