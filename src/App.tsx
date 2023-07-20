@@ -39,7 +39,6 @@ export const App = () => {
 				<GlobalStyle />
 				<StyledMain>
 					<Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-					{/* <CountriesList /> */}
 					<RouterProvider router={router} />
 				</StyledMain>
 			</ThemeProvider>

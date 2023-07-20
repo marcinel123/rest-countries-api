@@ -7,7 +7,7 @@ export const CountryDetails = () => {
 	const { name } = useParams();
 	return (
 		<div>
-			<Link onClick={() => setInputValue(inputValue)} to="/">
+			<Link onClick={setInputValue(inputValue)} to="/">
 				Go back
 			</Link>
 			countryDetails
