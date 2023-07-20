@@ -43,7 +43,7 @@ export const CountriesList = () => {
 				{!countries && "loading"}
 				{filteredDataByRegionandInput?.map(
 					({ name, flags, population, region, capital }: CountriesProps) => (
-						<StyledLink to={name.common} key={name.common}>
+						<StyledLink to={name.common.toLocaleLowerCase()} key={name.common}>
 							<CountryCard
 								name={name}
 								flags={flags}

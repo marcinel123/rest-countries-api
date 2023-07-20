@@ -1,10 +1,15 @@
 import { Link, useParams } from "react-router-dom";
+import { useCountriesContext } from "../../context/CountriesDataContext";
 
 export const CountryDetails = () => {
+	const { inputValue, setInputValue } = useCountriesContext();
+
 	const { name } = useParams();
 	return (
 		<div>
-			<Link to="/">Go back</Link>
+			<Link onClick={() => setInputValue(inputValue)} to="/">
+				Go back
+			</Link>
 			countryDetails
 			<p>{name}</p>
 		</div>
