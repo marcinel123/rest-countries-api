@@ -1,10 +1,21 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import {
+	Link,
+	LoaderFunction,
+	useLoaderData,
+	useParams,
+} from "react-router-dom";
 import { useCountriesContext } from "../../Context/CountriesDataContext";
+
+export interface CountryDataTypes {
+	name: {
+		common: string;
+	};
+}
 
 export const CountryDetails = () => {
 	const { inputValue, setInputValue } = useCountriesContext();
 	const { commonName } = useParams();
-	const countryData = useLoaderData();
+	const countryData = useLoaderData() as CountryDataTypes[];
 
 	const handleClick = (): void => {
 		setInputValue(inputValue);
@@ -18,7 +29,7 @@ export const CountryDetails = () => {
 			countryDetails
 			<p>{commonName}</p>
 			<div>
-				{countryData.map((country) => {
+				{countryData?.map((country) => {
 					return <p key={country.name.common}>{country.name.common}</p>;
 				})}
 			</div>
@@ -26,7 +37,7 @@ export const CountryDetails = () => {
 	);
 };
 
-export const countryDetailsLoader = async ({ params }) => {
+export const countryDetailsLoader: LoaderFunction = async ({ params }) => {
 	const { commonName } = params;
 	const res = await fetch(`https://restcountries.com/v3.1/name/${commonName}`);
 
