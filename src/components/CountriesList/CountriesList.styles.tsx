@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledDisplaySection = styled.section`
@@ -20,4 +21,8 @@ export const StyledParagraph = styled.p`
 		margin-bottom: 10px;
 		margin-top: 0;
 	}
+`;
+
+export const StyledLink = styled(Link)`
+	text-decoration: none;
 `;

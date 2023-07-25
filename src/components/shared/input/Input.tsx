@@ -1,5 +1,5 @@
 import React from "react";
-import { useCountriesContext } from "../../../context/CountriesDataContext";
+import { useCountriesContext } from "../../../Context/CountriesDataContext";
 import {
 	SearchIcon,
 	StyledInputElement,
@@ -12,7 +12,7 @@ export interface InputProps {
 }
 
 export const Input = ({ inputId, placeholder }: InputProps) => {
-	const { setInputValue } = useCountriesContext();
+	const { inputValue, setInputValue } = useCountriesContext();
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(e.target.value);
 	};
@@ -24,6 +24,7 @@ export const Input = ({ inputId, placeholder }: InputProps) => {
 				id={inputId}
 				placeholder={placeholder}
 				onChange={handleInputChange}
+				value={inputValue}
 			/>
 		</StyledInputLabel>
 	);
