@@ -9,4 +9,5 @@ export interface CountriesProps {
 	population: number;
 	region: string;
 	capital: string;
+	cca3?: string;
 }
