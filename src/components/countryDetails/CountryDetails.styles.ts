@@ -54,25 +54,26 @@ export const StyledDivWithFlag = styled.div`
 `;
 
 export const StyledDivWithCountryData = styled.div`
-padding: 2rem;
+padding: 2rem 1rem;
 width 40%;
 `;
 
 export const StyledLeftColumnWithCountryInfo = styled.div`
-	margin-right: 6rem;
+	margin-right: 5rem;
 `;
 
-export const StyledCountryName = styled.h3`
+export const StyledCountryName = styled.h4`
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	color: ${(props) => props.theme.colors.text};
 	margin-bottom: 2rem;
+	font-size: ${(props) => props.theme.fonts.sizes.xl};
 `;
 
 export const StyledParagraphWithCountryInfo = styled.p`
 	font-family: ${(props) => props.theme.fonts.family.basic};
 	font-size: ${(props) => props.theme.fonts.sizes.m};
 	color: ${(props) => props.theme.colors.text};
-	margin-top: 5px;
+	margin-top: 10px;
 `;
 
 export const StyledSpanWithCategoryName = styled.span`
@@ -91,11 +92,12 @@ export const StyledDivWithButtons = styled.div`
 `;
 
 export const StyledLinkWithBorderCountries = styled(StyledLink)`
+	text-align: center;
 	width: 20%;
 	max-width: 7rem;
 	height: 8%;
 	max-height: 3rem;
 	font-size: ${(props) => props.theme.fonts.sizes.s};
-	margin: auto 5px;
+	margin: 7px 5px;
 	padding: 5px;
 `;

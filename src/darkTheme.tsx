@@ -14,6 +14,7 @@ export const darkTheme = {
 			s: "0.775rem",
 			m: "0.9rem",
 			l: "1.5rem",
+			xl: "2rem",
 		},
 		family: {
 			basic: "Nunito Sans",

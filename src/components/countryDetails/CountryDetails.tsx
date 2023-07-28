@@ -37,20 +37,18 @@ export interface CountryDataTypes {
 	capital: [];
 	tld: string[];
 	currencies: {
-		curr: {
+		[key: number]: {
 			name: string;
 		};
 	};
-	languages: {
-		ara: string;
-	};
+
+	languages: string;
 	borders: string[];
 }
 
 export const CountryDetails = () => {
 	const { inputValue, setInputValue, countries } = useCountriesContext();
 	const countryData = useLoaderData() as CountryDataTypes[];
-	console.log(countryData);
 
 	const handleClick = (): void => {
 		setInputValue(inputValue);
@@ -90,20 +88,26 @@ export const CountryDetails = () => {
 						altSpellings,
 						borders,
 					}) => {
-						const arr: CountriesProps[] | undefined = [];
+						const arr: CountriesProps[] = [];
 
 						borders?.forEach((singleBorder) => {
 							const borderCountry = countries?.find((singleCountry) => {
 								return singleCountry.cca3 === singleBorder;
-							});
+							}) as CountriesProps;
 
 							arr.push(borderCountry);
 						});
 
-						// const x = Object.keys(currencies);
+						const currencieKey = Object.keys(currencies)[0];
+
+						const currencieName =
+							currencies[currencieKey as unknown as number].name;
+
+						const languagesKeys = Object.keys(languages);
+
 						return (
-							<>
-								<StyledDivWithCountryInfo key={name.common}>
+							<div key={name.common}>
+								<StyledDivWithCountryInfo>
 									<StyledLeftColumnWithCountryInfo>
 										<StyledCountryName>{name.common}</StyledCountryName>
 										<StyledParagraphWithCountryInfo>
@@ -145,38 +149,45 @@ export const CountryDetails = () => {
 											</StyledSpanWithCategoryName>{" "}
 											{tld[0]}
 										</StyledParagraphWithCountryInfo>
-										{/* <p>Currencies: {currencies.x.name}</p> */}
 										<StyledParagraphWithCountryInfo>
 											<StyledSpanWithCategoryName>
 												Currencies:
 											</StyledSpanWithCategoryName>{" "}
-											{/* {x} */}
+											{currencieName}
 										</StyledParagraphWithCountryInfo>
 										<StyledParagraphWithCountryInfo>
 											<StyledSpanWithCategoryName>
 												Languages:
 											</StyledSpanWithCategoryName>{" "}
-											{languages.ara}{" "}
+											{languagesKeys.map((lang) => {
+												return (
+													<span key={lang}>
+														{languages[lang as unknown as number]},{" "}
+													</span>
+												);
+											})}
 										</StyledParagraphWithCountryInfo>
 									</div>
 								</StyledDivWithCountryInfo>
 								<StyledDivWithButtons>
 									<StyledSpanWithCategoryName>
 										Border Countries:
-									</StyledSpanWithCategoryName>
-									{arr?.map(({ name: title }) => {
-										return (
-											<StyledLinkWithBorderCountries
-												to={`/${title.common}`}
-												key={title.common}
-												type="button"
-											>
-												{title.common}
-											</StyledLinkWithBorderCountries>
-										);
-									})}
+									</StyledSpanWithCategoryName>{" "}
+									{arr.length
+										? arr.map((country, index) => {
+												return (
+													<StyledLinkWithBorderCountries
+														to={`/${country?.name.common}`}
+														key={index}
+														type="button"
+													>
+														{country?.name.common.substr(0, 12)}
+													</StyledLinkWithBorderCountries>
+												);
+										  })
+										: "No border countries found."}
 								</StyledDivWithButtons>
-							</>
+							</div>
 						);
 					}
 				)}
@@ -187,7 +198,9 @@ export const CountryDetails = () => {
 
 export const countryDetailsLoader: LoaderFunction = async ({ params }) => {
 	const { commonName } = params;
-	const res = await fetch(`https://restcountries.com/v3.1/name/${commonName}`);
+	const res = await fetch(
+		`https://restcountries.com/v3.1/name/${commonName}?fullText=true`
+	);
 
 	if (!res.ok) {
 		throw Error("Could not find that country.");
