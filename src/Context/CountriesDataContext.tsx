@@ -1,7 +1,6 @@
 import React, {
 	createContext,
 	ReactNode,
-	useEffect,
 	useMemo,
 	useContext,
 	useState,
@@ -16,6 +15,7 @@ interface ContextProps {
 	setSelectCountryRegion: React.Dispatch<React.SetStateAction<string>>;
 	inputValue: string;
 	setInputValue: React.Dispatch<React.SetStateAction<string>>;
+	fetchCountries: () => Promise<void>;
 }
 
 export const CountriesContext = createContext<ContextProps>({
@@ -25,6 +25,7 @@ export const CountriesContext = createContext<ContextProps>({
 	setSelectCountryRegion: () => {},
 	inputValue: "",
 	setInputValue: () => {},
+	fetchCountries: async () => {},
 });
 
 export const useCountriesContext = () => {
@@ -37,10 +38,6 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 	const [selectCountryRegion, setSelectCountryRegion] = useState<string>("");
 	const { error, countries, fetchCountries } = useFetchCountries();
 
-	useEffect(() => {
-		fetchCountries();
-	}, []);
-
 	const contextValues = useMemo(() => {
 		return {
 			error,
@@ -49,6 +46,7 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 			setSelectCountryRegion,
 			inputValue,
 			setInputValue,
+			fetchCountries,
 		};
 	}, [
 		error,
@@ -57,6 +55,7 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 		setSelectCountryRegion,
 		inputValue,
 		setInputValue,
+		fetchCountries,
 	]);
 
 	return (

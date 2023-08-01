@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
 	StyledDisplaySection,
 	StyledLink,
@@ -9,8 +10,14 @@ import { CountriesProps } from "./CountriesProps";
 import { FormPanel } from "../FormPanel/FormPanel";
 
 export const CountriesList = () => {
-	const { inputValue, error, countries, selectCountryRegion } =
+	const { inputValue, error, countries, selectCountryRegion, fetchCountries } =
 		useCountriesContext();
+
+	useEffect(() => {
+		if (!countries?.length) {
+			fetchCountries();
+		}
+	}, []);
 
 	const filteredDataByRegion = countries?.filter((country) => {
 		return selectCountryRegion

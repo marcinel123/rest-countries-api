@@ -27,14 +27,13 @@ const StyledMain = styled.main`
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
-			<Route index element={<CountriesList />} />
 			<Route
 				path=":commonName"
 				element={<CountryDetails />}
 				loader={countryDetailsLoader}
 				errorElement={<Page404 />}
 			/>
-			<Route path="*" element={<CountriesList />} />
+			<Route path="/" element={<CountriesList />} />
 		</Route>
 	)
 );

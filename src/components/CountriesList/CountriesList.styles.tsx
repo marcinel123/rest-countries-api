@@ -24,5 +24,21 @@ export const StyledParagraph = styled.p`
 `;
 
 export const StyledLink = styled(Link)`
+	margin: 30px auto;
+	width: 80%;
+	min-width: 19rem;
+	height: 24rem;
 	text-decoration: none;
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
+		min-width: 16rem;
+		width: 16rem;
+		height: 18rem;
+		margin: 40px;
+		max-width: 22rem;
+	}
+	@media screen and (min-width: ${(props) => props.theme.breakpoints.large}) {
+		margin: 40px 60px;
+		max-width: 22rem;
+		height: 24rem;
+	}
 `;

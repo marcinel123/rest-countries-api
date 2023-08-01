@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LoaderFunction, useLoaderData } from "react-router-dom";
 import { useCountriesContext } from "../../Context/CountriesDataContext";
 import {
@@ -47,8 +48,15 @@ export interface CountryDataTypes {
 }
 
 export const CountryDetails = () => {
-	const { inputValue, setInputValue, countries } = useCountriesContext();
+	const { inputValue, setInputValue, countries, fetchCountries } =
+		useCountriesContext();
 	const countryData = useLoaderData() as CountryDataTypes[];
+
+	useEffect(() => {
+		if (!countries?.length) {
+			fetchCountries();
+		}
+	}, []);
 
 	const handleClick = (): void => {
 		setInputValue(inputValue);
