@@ -1,51 +1,24 @@
 import { useEffect } from "react";
-import { LoaderFunction, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { useCountriesContext } from "../../Context/CountriesDataContext";
 import {
 	StyledArrowIcon,
+	StyledButtons,
+	StyledCountryDataWrapper,
+	StyledCountryInfoWrapper,
 	StyledCountryName,
-	StyledDivWithButtons,
 	StyledDivWithCountryData,
-	StyledDivWithCountryInfo,
 	StyledDivWithFlag,
 	StyledFlagImage,
-	StyledLeftColumnWithCountryInfo,
 	StyledLink,
-	StyledLinkWithBorderCountries,
-	StyledParagraphWithCountryInfo,
 	StyledSection,
-	StyledSpanWithCategoryName,
+	StyledWrapperWithButtons,
 } from "./CountryDetails.styles";
-import { CountriesProps } from "../CountriesList/CountriesProps";
-
-export interface CountryDataTypes {
-	name: {
-		common: string;
-		nativeName: {
-			ara: {
-				official: string;
-			};
-		};
-	};
-	altSpellings: string;
-	population: number;
-	flags: {
-		alt: string;
-		png: string;
-	};
-	region: string;
-	subregion: string;
-	capital: [];
-	tld: string[];
-	currencies: {
-		[key: number]: {
-			name: string;
-		};
-	};
-
-	languages: string;
-	borders: string[];
-}
+import { CountryDataTypes } from "./CountryDetailsProps";
+import { LeftColumnWithCountryInfo } from "./LeftColumnWithCountryInfo/LeftColumnWithCountryInfo";
+import { StyledCategoryName } from "./LeftColumnWithCountryInfo/LeftColumnWithCountryInfo.styles";
+import { RightColumnWithCountryInfo } from "./RightColumnWithCountryInfo/RightColumnWithCountryInfo";
+import { NoBorderCountries } from "./NoBorderCountries/NoBorderCountries";
 
 export const CountryDetails = () => {
 	const { inputValue, setInputValue, countries, fetchCountries } =
@@ -58,7 +31,7 @@ export const CountryDetails = () => {
 		}
 	}, []);
 
-	const handleClick = (): void => {
+	const handleClick = () => {
 		setInputValue(inputValue);
 	};
 
@@ -96,105 +69,49 @@ export const CountryDetails = () => {
 						altSpellings,
 						borders,
 					}) => {
-						const arr: CountriesProps[] = [];
-
-						borders?.forEach((singleBorder) => {
-							const borderCountry = countries?.find((singleCountry) => {
+						const borderCountriesArr = borders?.map((singleBorder) => {
+							return countries?.find((singleCountry) => {
 								return singleCountry.cca3 === singleBorder;
-							}) as CountriesProps;
-
-							arr.push(borderCountry);
+							});
 						});
-
-						const currencieKey = Object.keys(currencies)[0];
-
-						const currencieName =
-							currencies[currencieKey as unknown as number].name;
-
-						const languagesKeys = Object.keys(languages);
 
 						return (
 							<div key={name.common}>
-								<StyledDivWithCountryInfo>
-									<StyledLeftColumnWithCountryInfo>
-										<StyledCountryName>{name.common}</StyledCountryName>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Native Name:
-											</StyledSpanWithCategoryName>{" "}
-											{altSpellings[2]}
-										</StyledParagraphWithCountryInfo>
-
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Population:
-											</StyledSpanWithCategoryName>{" "}
-											{population}
-										</StyledParagraphWithCountryInfo>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Region:
-											</StyledSpanWithCategoryName>{" "}
-											{region}
-										</StyledParagraphWithCountryInfo>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Sub Region:
-											</StyledSpanWithCategoryName>{" "}
-											{subregion}
-										</StyledParagraphWithCountryInfo>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Capital:
-											</StyledSpanWithCategoryName>{" "}
-											{capital}
-										</StyledParagraphWithCountryInfo>
-									</StyledLeftColumnWithCountryInfo>
-									<div>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Top Level Domain:
-											</StyledSpanWithCategoryName>{" "}
-											{tld[0]}
-										</StyledParagraphWithCountryInfo>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Currencies:
-											</StyledSpanWithCategoryName>{" "}
-											{currencieName}
-										</StyledParagraphWithCountryInfo>
-										<StyledParagraphWithCountryInfo>
-											<StyledSpanWithCategoryName>
-												Languages:
-											</StyledSpanWithCategoryName>{" "}
-											{languagesKeys.map((lang) => {
-												return (
-													<span key={lang}>
-														{languages[lang as unknown as number]},{" "}
-													</span>
-												);
-											})}
-										</StyledParagraphWithCountryInfo>
-									</div>
-								</StyledDivWithCountryInfo>
-								<StyledDivWithButtons>
-									<StyledSpanWithCategoryName>
-										Border Countries:
-									</StyledSpanWithCategoryName>{" "}
-									{arr.length
-										? arr.map((country, index) => {
-												return (
-													<StyledLinkWithBorderCountries
-														to={`/${country?.name.common}`}
-														key={index}
-														type="button"
-													>
-														{country?.name.common.substr(0, 12)}
-													</StyledLinkWithBorderCountries>
-												);
-										  })
-										: "No border countries found."}
-								</StyledDivWithButtons>
+								<StyledCountryInfoWrapper>
+									<StyledCountryName>{name.common}</StyledCountryName>
+									<StyledCountryDataWrapper>
+										<LeftColumnWithCountryInfo
+											nativeName={altSpellings}
+											population={population}
+											region={region}
+											subregion={subregion}
+											capital={capital}
+										/>
+										<RightColumnWithCountryInfo
+											tld={tld}
+											currencies={currencies}
+											languages={languages}
+										/>
+									</StyledCountryDataWrapper>
+								</StyledCountryInfoWrapper>
+								<StyledWrapperWithButtons>
+									<StyledCategoryName>Border Countries:</StyledCategoryName>{" "}
+									{borderCountriesArr?.length ? (
+										borderCountriesArr.map((country, index) => {
+											return (
+												<StyledButtons
+													to={`/${country?.name.common}`}
+													key={index}
+													type="button"
+												>
+													{country?.name.common}
+												</StyledButtons>
+											);
+										})
+									) : (
+										<NoBorderCountries />
+									)}
+								</StyledWrapperWithButtons>
 							</div>
 						);
 					}
@@ -202,17 +119,4 @@ export const CountryDetails = () => {
 			</StyledDivWithCountryData>
 		</StyledSection>
 	);
-};
-
-export const countryDetailsLoader: LoaderFunction = async ({ params }) => {
-	const { commonName } = params;
-	const res = await fetch(
-		`https://restcountries.com/v3.1/name/${commonName}?fullText=true`
-	);
-
-	if (!res.ok) {
-		throw Error("Could not find that country.");
-	}
-
-	return res.json();
 };

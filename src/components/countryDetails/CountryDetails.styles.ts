@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { ArrowLeft } from "@styled-icons/bootstrap/ArrowLeft";
 
 export const StyledSection = styled.section`
+	margin-bottom: 70%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	padding: 0 1rem;
+	padding-bottom: 3rem;
 	background-color: ${(props) => props.theme.colors.background};
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		flex-direction: row;
@@ -15,14 +17,14 @@ export const StyledSection = styled.section`
 		justify-content: space-around;
 		padding: 0 1rem;
 		background-color: ${(props) => props.theme.colors.background};
-		height: 100vh;
 	}
 `;
 
 export const StyledFlagImage = styled.img`
 	width: 100%;
+	max-width: 60rem;
 	height: 50%;
-	max-height: 20rem;
+	max-height: 30rem;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		margin-right: 10rem;
 	}
@@ -52,16 +54,18 @@ export const StyledArrowIcon = styled(ArrowLeft)`
 	margin-right: 5px;
 `;
 
-export const StyledDivWithCountryInfo = styled.div`
+export const StyledCountryInfoWrapper = styled.div`
 	color: ${(props) => props.theme.colors.text};
 	display: flex;
 	flex-direction: column;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		flex-direction: row;
-		align-items: center;
 		width: 100%;
 		margin-top: 3rem;
 	}
+`;
+
+export const StyledCountryDataWrapper = styled.div`
+	display: flex;
 `;
 
 export const StyledDivWithFlag = styled.div`
@@ -77,15 +81,9 @@ margin: 3rem 0;
 export const StyledDivWithCountryData = styled.div`
 width 90%;
 @media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
+	margin-top: 3rem;
 padding: 2rem 1rem;
 width 40%;}
-`;
-
-export const StyledLeftColumnWithCountryInfo = styled.div`
-	margin-bottom: 3rem;
-	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		margin-right: 5rem;
-	}
 `;
 
 export const StyledCountryName = styled.h4`
@@ -95,20 +93,8 @@ export const StyledCountryName = styled.h4`
 	font-size: ${(props) => props.theme.fonts.sizes.xl};
 `;
 
-export const StyledParagraphWithCountryInfo = styled.p`
-	font-family: ${(props) => props.theme.fonts.family.basic};
-	font-size: ${(props) => props.theme.fonts.sizes.m};
-	color: ${(props) => props.theme.colors.text};
-	margin-top: 10px;
-`;
-
-export const StyledSpanWithCategoryName = styled.span`
-	font-weight: ${(props) => props.theme.fonts.weight.extraBold};
-	font-size: ${(props) => props.theme.fonts.sizes.m};
-`;
-
-export const StyledDivWithButtons = styled.div`
-	margin-top: 4rem;
+export const StyledWrapperWithButtons = styled.div`
+	margin-top: 2rem;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -117,13 +103,15 @@ export const StyledDivWithButtons = styled.div`
 	color: ${(props) => props.theme.colors.text};
 `;
 
-export const StyledLinkWithBorderCountries = styled(StyledLink)`
+export const StyledButtons = styled(StyledLink)`
 	text-align: center;
+	min-height: 3rem;
+	min-width: 8rem;
 	width: 20%;
 	max-width: 7rem;
 	height: 8%;
 	max-height: 3rem;
 	font-size: ${(props) => props.theme.fonts.sizes.s};
-	margin: 7px 5px;
+	margin: 7px;
 	padding: 5px;
 `;

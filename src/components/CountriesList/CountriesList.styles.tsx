@@ -8,6 +8,7 @@ export const StyledDisplaySection = styled.section`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	margin-bottom: 100%;
 `;
 
 export const StyledParagraph = styled.p`

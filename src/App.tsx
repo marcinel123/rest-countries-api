@@ -12,11 +12,9 @@ import { GlobalStyle } from "./GlobalStyles";
 import { CountriesDataContext } from "./Context/CountriesDataContext";
 import { darkTheme } from "./darkTheme";
 import { useDarkThemeMode } from "./hooks/useDarkThemeMode";
-import {
-	CountryDetails,
-	countryDetailsLoader,
-} from "./components/countryDetails/CountryDetails";
+import { CountryDetails } from "./components/countryDetails/CountryDetails";
 import { Page404 } from "./components/page404/Page404";
+import { countryDetailsLoader } from "./api/countryDetailsLoader";
 
 const StyledMain = styled.main`
 	display: flex;
