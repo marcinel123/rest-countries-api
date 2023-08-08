@@ -19,8 +19,7 @@ export const StyledParagraph = styled.p`
 	margin: 50px auto;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		font-size: ${(props) => props.theme.fonts.sizes.l};
-		margin-bottom: 10px;
-		margin-top: 0;
+		margin: 4rem auto;
 	}
 `;
 

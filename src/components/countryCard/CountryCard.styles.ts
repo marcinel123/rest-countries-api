@@ -15,7 +15,6 @@ export const StyledCountryCard = styled.div`
 	overflow: hidden;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
 		min-width: 16rem;
-		width: 16rem;
 		height: 18rem;
 	}
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.large}) {

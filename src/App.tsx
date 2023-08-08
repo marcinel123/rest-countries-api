@@ -20,6 +20,7 @@ const StyledMain = styled.main`
 	display: flex;
 	flex-direction: column;
 	background-color: ${(props) => props.theme.colors.background};
+	min-height: 100vh;
 `;
 
 const router = createBrowserRouter(

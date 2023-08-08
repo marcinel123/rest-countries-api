@@ -2,23 +2,17 @@ import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useCountriesContext } from "../../Context/CountriesDataContext";
 import {
-	StyledArrowIcon,
-	StyledButtons,
 	StyledCountryDataWrapper,
 	StyledCountryInfoWrapper,
 	StyledCountryName,
 	StyledDivWithCountryData,
-	StyledDivWithFlag,
-	StyledFlagImage,
-	StyledLink,
 	StyledSection,
-	StyledWrapperWithButtons,
 } from "./CountryDetails.styles";
 import { CountryDataTypes } from "./CountryDetailsProps";
 import { LeftColumnWithCountryInfo } from "./LeftColumnWithCountryInfo/LeftColumnWithCountryInfo";
-import { StyledCategoryName } from "./LeftColumnWithCountryInfo/LeftColumnWithCountryInfo.styles";
 import { RightColumnWithCountryInfo } from "./RightColumnWithCountryInfo/RightColumnWithCountryInfo";
-import { NoBorderCountries } from "./NoBorderCountries/NoBorderCountries";
+import { BorderCountriesButtons } from "./BorderCountriesButtons/BorderCountriesButtons";
+import { FlagComponent } from "./Flag/FlagComponent";
 
 export const CountryDetails = () => {
 	const { inputValue, setInputValue, countries, fetchCountries } =
@@ -31,30 +25,14 @@ export const CountryDetails = () => {
 		}
 	}, []);
 
-	const handleClick = () => {
-		setInputValue(inputValue);
-	};
-
 	return (
 		<StyledSection>
-			<StyledDivWithFlag>
-				<StyledLink onClick={handleClick} to="/">
-					<StyledArrowIcon />
-					Back
-				</StyledLink>
+			<FlagComponent
+				countryData={countryData}
+				inputValue={inputValue}
+				setInputValue={setInputValue}
+			/>
 
-				<div>
-					{countryData?.map(({ name, flags }) => {
-						return (
-							<StyledFlagImage
-								src={flags.png}
-								alt={flags.alt}
-								key={name.common}
-							/>
-						);
-					})}
-				</div>
-			</StyledDivWithFlag>
 			<StyledDivWithCountryData>
 				{countryData?.map(
 					({
@@ -69,12 +47,6 @@ export const CountryDetails = () => {
 						altSpellings,
 						borders,
 					}) => {
-						const borderCountriesArr = borders?.map((singleBorder) => {
-							return countries?.find((singleCountry) => {
-								return singleCountry.cca3 === singleBorder;
-							});
-						});
-
 						return (
 							<div key={name.common}>
 								<StyledCountryInfoWrapper>
@@ -94,24 +66,11 @@ export const CountryDetails = () => {
 										/>
 									</StyledCountryDataWrapper>
 								</StyledCountryInfoWrapper>
-								<StyledWrapperWithButtons>
-									<StyledCategoryName>Border Countries:</StyledCategoryName>{" "}
-									{borderCountriesArr?.length ? (
-										borderCountriesArr.map((country, index) => {
-											return (
-												<StyledButtons
-													to={`/${country?.name.common}`}
-													key={index}
-													type="button"
-												>
-													{country?.name.common}
-												</StyledButtons>
-											);
-										})
-									) : (
-										<NoBorderCountries />
-									)}
-								</StyledWrapperWithButtons>
+
+								<BorderCountriesButtons
+									countries={countries}
+									borders={borders}
+								/>
 							</div>
 						);
 					}

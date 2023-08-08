@@ -1,6 +1,6 @@
 export const lightTheme = {
 	breakpoints: {
-		medium: "736px",
+		medium: "1040px",
 		large: "2000px",
 	},
 	colors: {

@@ -23,6 +23,8 @@ export interface CountryDataTypes {
 		};
 	};
 
-	languages: string;
+	languages: {
+		[keys: string]: string;
+	};
 	borders: string[];
 }

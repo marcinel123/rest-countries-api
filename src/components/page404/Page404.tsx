@@ -2,11 +2,12 @@ import { useRouteError } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledError = styled.h2`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: ${(props) => props.theme.fonts.family.basic};
-	font-size: ${(props) => props.theme.fonts.sizes.l};
+	font-size: ${(props) => props.theme.fonts.sizes.xl};
 	color: ${(props) => props.theme.colors.text};
-	text-align: center;
-	margin: 5rem auto;
 	height: 100vh;
 `;
 
