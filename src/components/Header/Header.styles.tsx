@@ -46,3 +46,7 @@ export const StyledDarkModeIcon = styled(Moon)`
 	height: 16px;
 	margin: 0 10px;
 `;
+
+export const StyledLogo = styled.a`
+	text-decoration: none;
+`;

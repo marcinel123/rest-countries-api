@@ -5,16 +5,16 @@ import {
 	createBrowserRouter,
 	createRoutesFromElements,
 } from "react-router-dom";
-import { lightTheme } from "./lightTheme";
-import { Header } from "./components/Header/Header";
-import { CountriesList } from "./components/CountriesList/CountriesList";
-import { GlobalStyle } from "./GlobalStyles";
-import { CountriesDataContext } from "./Context/CountriesDataContext";
-import { darkTheme } from "./darkTheme";
-import { useDarkThemeMode } from "./hooks/useDarkThemeMode";
-import { CountryDetails } from "./components/countryDetails/CountryDetails";
-import { Page404 } from "./components/page404/Page404";
-import { countryDetailsLoader } from "./api/countryDetailsLoader";
+import { lightTheme } from "../../theme/lightTheme";
+import { Header } from "../Header/Header";
+import { CountriesList } from "../CountriesList/CountriesList";
+import { GlobalStyle } from "../../theme/globalStyles/GlobalStyles";
+import { CountriesDataContext } from "../../context/CountriesDataContext";
+import { darkTheme } from "../../theme/darkTheme";
+import { useDarkThemeMode } from "../../hooks/useDarkThemeMode";
+import { CountryDetails } from "../CountryDetails/CountryDetails";
+import { Page404 } from "../Page404/Page404";
+import { countryDetailsLoader } from "../../api/countryDetailsLoader";
 
 const StyledMain = styled.main`
 	display: flex;

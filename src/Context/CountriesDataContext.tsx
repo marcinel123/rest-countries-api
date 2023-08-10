@@ -16,8 +16,8 @@ interface ContextProps {
 	inputValue: string;
 	setInputValue: React.Dispatch<React.SetStateAction<string>>;
 	fetchCountries: () => Promise<void>;
-	selectOption: string;
-	setSelectOption: React.Dispatch<React.SetStateAction<string>>;
+	selectedOption: string;
+	setSelectedOption: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const CountriesContext = createContext<ContextProps>({
@@ -28,8 +28,8 @@ export const CountriesContext = createContext<ContextProps>({
 	inputValue: "",
 	setInputValue: () => {},
 	fetchCountries: async () => {},
-	selectOption: "Filter by Region",
-	setSelectOption: () => {},
+	selectedOption: "Filter by Region",
+	setSelectedOption: () => {},
 });
 
 export const useCountriesContext = () => {
@@ -38,7 +38,7 @@ export const useCountriesContext = () => {
 };
 
 export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
-	const [selectOption, setSelectOption] = useState("Filter by Region");
+	const [selectedOption, setSelectedOption] = useState("Filter by Region");
 	const [inputValue, setInputValue] = useState<string>("");
 	const [selectCountryRegion, setSelectCountryRegion] = useState<string>("");
 	const { error, countries, fetchCountries } = useFetchCountries();
@@ -52,8 +52,8 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 			inputValue,
 			setInputValue,
 			fetchCountries,
-			selectOption,
-			setSelectOption,
+			selectedOption,
+			setSelectedOption,
 		};
 	}, [
 		error,
@@ -63,8 +63,8 @@ export const CountriesDataContext = ({ children }: { children: ReactNode }) => {
 		inputValue,
 		setInputValue,
 		fetchCountries,
-		selectOption,
-		setSelectOption,
+		selectedOption,
+		setSelectedOption,
 	]);
 
 	return (

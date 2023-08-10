@@ -4,8 +4,8 @@ import {
 	StyledLink,
 	StyledParagraph,
 } from "./CountriesList.styles";
-import { CountryCard } from "../countryCard/CountryCard";
-import { useCountriesContext } from "../../Context/CountriesDataContext";
+import { CountryCard } from "../CountryCard/CountryCard";
+import { useCountriesContext } from "../../context/CountriesDataContext";
 import { CountriesProps } from "./CountriesProps";
 import { FormPanel } from "../FormPanel/FormPanel";
 
