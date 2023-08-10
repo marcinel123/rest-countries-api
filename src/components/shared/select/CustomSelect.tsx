@@ -17,9 +17,9 @@ export interface CustomSelectProps {
 }
 
 export const CustomSelect = ({ data }: CustomSelectProps) => {
-	const [selectOption, setSelectOption] = useState("Filter by Region");
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { setSelectCountryRegion } = useCountriesContext();
+	const { setSelectCountryRegion, selectOption, setSelectOption } =
+		useCountriesContext();
 
 	const menuToggle = () => {
 		setIsMenuOpen((prevState) => !prevState);

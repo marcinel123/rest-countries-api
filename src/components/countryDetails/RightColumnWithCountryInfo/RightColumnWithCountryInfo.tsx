@@ -24,10 +24,12 @@ export const RightColumnWithCountryInfo = ({
 
 	const currencyName = currencies[currencyKey].name;
 	const languagesKeys = Object.keys(languages);
+
 	return (
 		<div>
 			<StyledCategoriesWrapper>
-				<StyledCategoryName>Top Level Domain:</StyledCategoryName> {tld[0]}
+				<StyledCategoryName>Top Level Domain:</StyledCategoryName>{" "}
+				{tld ? tld[0] : "None"}
 			</StyledCategoriesWrapper>
 			<StyledCategoriesWrapper>
 				<StyledCategoryName>Currencies:</StyledCategoryName> {currencyName}

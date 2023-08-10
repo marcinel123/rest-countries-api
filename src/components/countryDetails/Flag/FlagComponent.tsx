@@ -11,15 +11,20 @@ interface FlagComponentProps {
 	countryData: CountryDataTypes[];
 	inputValue: string;
 	setInputValue: React.Dispatch<React.SetStateAction<string>>;
+	selectOption: string;
+	setSelectOption: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const FlagComponent = ({
 	countryData,
 	inputValue,
 	setInputValue,
+	selectOption,
+	setSelectOption,
 }: FlagComponentProps) => {
 	const handleClick = () => {
 		setInputValue(inputValue);
+		setSelectOption(selectOption);
 	};
 
 	return (

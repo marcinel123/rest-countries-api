@@ -15,8 +15,14 @@ import { BorderCountriesButtons } from "./BorderCountriesButtons/BorderCountries
 import { FlagComponent } from "./Flag/FlagComponent";
 
 export const CountryDetails = () => {
-	const { inputValue, setInputValue, countries, fetchCountries } =
-		useCountriesContext();
+	const {
+		inputValue,
+		setInputValue,
+		countries,
+		fetchCountries,
+		selectOption,
+		setSelectOption,
+	} = useCountriesContext();
 	const countryData = useLoaderData() as CountryDataTypes[];
 
 	useEffect(() => {
@@ -31,6 +37,8 @@ export const CountryDetails = () => {
 				countryData={countryData}
 				inputValue={inputValue}
 				setInputValue={setInputValue}
+				selectOption={selectOption}
+				setSelectOption={setSelectOption}
 			/>
 
 			<StyledDivWithCountryData>
