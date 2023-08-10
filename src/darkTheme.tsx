@@ -1,6 +1,6 @@
 export const darkTheme = {
 	breakpoints: {
-		medium: "736px",
+		medium: "1040px",
 		large: "2000px",
 	},
 	colors: {
@@ -14,6 +14,7 @@ export const darkTheme = {
 			s: "0.775rem",
 			m: "0.9rem",
 			l: "1.5rem",
+			xl: "2rem",
 		},
 		family: {
 			basic: "Nunito Sans",

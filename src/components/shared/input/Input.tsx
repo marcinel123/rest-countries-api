@@ -25,6 +25,7 @@ export const Input = ({ inputId, placeholder }: InputProps) => {
 				placeholder={placeholder}
 				onChange={handleInputChange}
 				value={inputValue}
+				autoComplete="off"
 			/>
 		</StyledInputLabel>
 	);

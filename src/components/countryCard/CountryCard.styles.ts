@@ -5,7 +5,7 @@ export const StyledCountryCard = styled.div`
 	box-shadow: 2px 2px 10px -8px rgba(66, 68, 90, 1);
 	background-color: ${(props) => props.theme.colors.elements};
 	color: ${(props) => props.theme.colors.text};
-	margin: 20px;
+	margin: 20px auto;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
@@ -14,11 +14,8 @@ export const StyledCountryCard = styled.div`
 	height: 24rem;
 	overflow: hidden;
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.medium}) {
-		flex-basis: 16%;
-		height: 20rem;
-		margin: 40px;
-		max-width: 22rem;
-		min-width: 18rem;
+		min-width: 16rem;
+		height: 18rem;
 	}
 	@media screen and (min-width: ${(props) => props.theme.breakpoints.large}) {
 		margin: 40px 60px;

@@ -12,29 +12,27 @@ import { GlobalStyle } from "./GlobalStyles";
 import { CountriesDataContext } from "./Context/CountriesDataContext";
 import { darkTheme } from "./darkTheme";
 import { useDarkThemeMode } from "./hooks/useDarkThemeMode";
-import {
-	CountryDetails,
-	countryDetailsLoader,
-} from "./components/countryDetails/CountryDetails";
+import { CountryDetails } from "./components/countryDetails/CountryDetails";
 import { Page404 } from "./components/page404/Page404";
+import { countryDetailsLoader } from "./api/countryDetailsLoader";
 
 const StyledMain = styled.main`
 	display: flex;
 	flex-direction: column;
 	background-color: ${(props) => props.theme.colors.background};
+	min-height: 100vh;
 `;
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route>
-			<Route index element={<CountriesList />} />
 			<Route
 				path=":commonName"
 				element={<CountryDetails />}
 				loader={countryDetailsLoader}
 				errorElement={<Page404 />}
 			/>
-			<Route path="*" element={<CountriesList />} />
+			<Route path="/" element={<CountriesList />} />
 		</Route>
 	)
 );

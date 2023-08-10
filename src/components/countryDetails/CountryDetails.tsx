@@ -1,49 +1,81 @@
-import {
-	Link,
-	LoaderFunction,
-	useLoaderData,
-	useParams,
-} from "react-router-dom";
+import { useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 import { useCountriesContext } from "../../Context/CountriesDataContext";
-
-export interface CountryDataTypes {
-	name: {
-		common: string;
-	};
-}
+import {
+	StyledCountryDataWrapper,
+	StyledCountryInfoWrapper,
+	StyledCountryName,
+	StyledDivWithCountryData,
+	StyledSection,
+} from "./CountryDetails.styles";
+import { CountryDataTypes } from "./CountryDetailsProps";
+import { LeftColumnWithCountryInfo } from "./LeftColumnWithCountryInfo/LeftColumnWithCountryInfo";
+import { RightColumnWithCountryInfo } from "./RightColumnWithCountryInfo/RightColumnWithCountryInfo";
+import { BorderCountriesButtons } from "./BorderCountriesButtons/BorderCountriesButtons";
+import { FlagComponent } from "./Flag/FlagComponent";
 
 export const CountryDetails = () => {
-	const { inputValue, setInputValue } = useCountriesContext();
-	const { commonName } = useParams();
+	const { inputValue, setInputValue, countries, fetchCountries } =
+		useCountriesContext();
 	const countryData = useLoaderData() as CountryDataTypes[];
 
-	const handleClick = (): void => {
-		setInputValue(inputValue);
-	};
+	useEffect(() => {
+		if (!countries?.length) {
+			fetchCountries();
+		}
+	}, []);
 
 	return (
-		<div>
-			<Link onClick={handleClick} to="/">
-				Go back
-			</Link>
-			countryDetails
-			<p>{commonName}</p>
-			<div>
-				{countryData?.map((country) => {
-					return <p key={country.name.common}>{country.name.common}</p>;
-				})}
-			</div>
-		</div>
+		<StyledSection>
+			<FlagComponent
+				countryData={countryData}
+				inputValue={inputValue}
+				setInputValue={setInputValue}
+			/>
+
+			<StyledDivWithCountryData>
+				{countryData?.map(
+					({
+						name,
+						population,
+						region,
+						subregion,
+						capital,
+						tld,
+						currencies,
+						languages,
+						altSpellings,
+						borders,
+					}) => {
+						return (
+							<div key={name.common}>
+								<StyledCountryInfoWrapper>
+									<StyledCountryName>{name.common}</StyledCountryName>
+									<StyledCountryDataWrapper>
+										<LeftColumnWithCountryInfo
+											nativeName={altSpellings}
+											population={population}
+											region={region}
+											subregion={subregion}
+											capital={capital}
+										/>
+										<RightColumnWithCountryInfo
+											tld={tld}
+											currencies={currencies}
+											languages={languages}
+										/>
+									</StyledCountryDataWrapper>
+								</StyledCountryInfoWrapper>
+
+								<BorderCountriesButtons
+									countries={countries}
+									borders={borders}
+								/>
+							</div>
+						);
+					}
+				)}
+			</StyledDivWithCountryData>
+		</StyledSection>
 	);
-};
-
-export const countryDetailsLoader: LoaderFunction = async ({ params }) => {
-	const { commonName } = params;
-	const res = await fetch(`https://restcountries.com/v3.1/name/${commonName}`);
-
-	if (!res.ok) {
-		throw Error("Could not find that country.");
-	}
-
-	return res.json();
 };
