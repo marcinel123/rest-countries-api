@@ -7,7 +7,7 @@ import {
 	StyledFilterPanel,
 	StyledSpan,
 } from "./CustomSelect.styles";
-import { useCountriesContext } from "../../../Context/CountriesDataContext";
+import { useCountriesContext } from "../../../context/CountriesDataContext";
 
 export interface CustomSelectProps {
 	data: {
@@ -17,22 +17,22 @@ export interface CustomSelectProps {
 }
 
 export const CustomSelect = ({ data }: CustomSelectProps) => {
-	const [selectOption, setSelectOption] = useState("Filter by Region");
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { setSelectCountryRegion } = useCountriesContext();
+	const { setSelectCountryRegion, selectedOption, setSelectedOption } =
+		useCountriesContext();
 
 	const menuToggle = () => {
 		setIsMenuOpen((prevState) => !prevState);
 	};
 
 	const handleOptionSelection = (name: string) => {
-		setSelectOption(name);
+		setSelectedOption(name);
 		setSelectCountryRegion(name);
 	};
 
 	return (
 		<StyledFilterPanel onClick={menuToggle}>
-			<StyledSpan>{selectOption}</StyledSpan>
+			<StyledSpan>{selectedOption}</StyledSpan>
 			<FilterButton type="button">
 				<StyledArrowIcon />
 			</FilterButton>

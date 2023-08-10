@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
-import { useCountriesContext } from "../../Context/CountriesDataContext";
+import { useCountriesContext } from "../../context/CountriesDataContext";
 import {
 	StyledCountryDataWrapper,
 	StyledCountryInfoWrapper,
@@ -15,8 +15,14 @@ import { BorderCountriesButtons } from "./BorderCountriesButtons/BorderCountries
 import { FlagComponent } from "./Flag/FlagComponent";
 
 export const CountryDetails = () => {
-	const { inputValue, setInputValue, countries, fetchCountries } =
-		useCountriesContext();
+	const {
+		inputValue,
+		setInputValue,
+		countries,
+		fetchCountries,
+		selectedOption,
+		setSelectedOption,
+	} = useCountriesContext();
 	const countryData = useLoaderData() as CountryDataTypes[];
 
 	useEffect(() => {
@@ -31,6 +37,8 @@ export const CountryDetails = () => {
 				countryData={countryData}
 				inputValue={inputValue}
 				setInputValue={setInputValue}
+				selectedOption={selectedOption}
+				setSelectedOption={setSelectedOption}
 			/>
 
 			<StyledDivWithCountryData>

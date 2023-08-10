@@ -1,5 +1,5 @@
 import React from "react";
-import { useCountriesContext } from "../../../Context/CountriesDataContext";
+import { useCountriesContext } from "../../../context/CountriesDataContext";
 import {
 	SearchIcon,
 	StyledInputElement,
