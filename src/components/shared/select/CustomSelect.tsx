@@ -7,7 +7,7 @@ import {
 	StyledFilterPanel,
 	StyledSpan,
 } from "./CustomSelect.styles";
-import { useCountriesContext } from "../../../context/CountriesDataContext";
+import { useCountriesContext } from "../../../Context/CountriesDataContext";
 
 export interface CustomSelectProps {
 	data: {

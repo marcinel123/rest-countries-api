@@ -9,11 +9,11 @@ import { lightTheme } from "../../theme/lightTheme";
 import { Header } from "../Header/Header";
 import { CountriesList } from "../CountriesList/CountriesList";
 import { GlobalStyle } from "../../theme/globalStyles/GlobalStyles";
-import { CountriesDataContext } from "../../context/CountriesDataContext";
+import { CountriesDataContext } from "../../Context/CountriesDataContext";
 import { darkTheme } from "../../theme/darkTheme";
 import { useDarkThemeMode } from "../../hooks/useDarkThemeMode";
-import { CountryDetails } from "../CountryDetails/CountryDetails";
-import { Page404 } from "../Page404/Page404";
+import { CountryDetails } from "../countryDetails/CountryDetails";
+import { Page404 } from "../page404/Page404";
 import { countryDetailsLoader } from "../../api/countryDetailsLoader";
 
 const StyledMain = styled.main`
@@ -25,7 +25,7 @@ const StyledMain = styled.main`
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route>
+		<Route path="/" element={<Header />}>
 			<Route
 				path=":commonName"
 				element={<CountryDetails />}
@@ -38,14 +38,15 @@ const router = createBrowserRouter(
 );
 
 export const App = () => {
-	const { isDarkTheme, toggleTheme } = useDarkThemeMode();
+	const { isDarkTheme } = useDarkThemeMode();
+	console.log(isDarkTheme);
 
 	return (
 		<CountriesDataContext>
 			<ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
 				<GlobalStyle />
 				<StyledMain>
-					<Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+					{/* <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} /> */}
 					<RouterProvider router={router} />
 				</StyledMain>
 			</ThemeProvider>

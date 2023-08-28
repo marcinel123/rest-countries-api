@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { MoonOutline } from "@styled-icons/evaicons-outline/MoonOutline";
 import { Moon } from "@styled-icons/heroicons-solid/Moon";
+import { NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.nav`
 	padding: 20px 45px;
@@ -47,6 +48,6 @@ export const StyledDarkModeIcon = styled(Moon)`
 	margin: 0 10px;
 `;
 
-export const StyledLogo = styled.a`
+export const StyledLogo = styled(NavLink)`
 	text-decoration: none;
 `;

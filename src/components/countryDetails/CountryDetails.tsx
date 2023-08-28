@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
-import { useCountriesContext } from "../../context/CountriesDataContext";
+import { useCountriesContext } from "../../Context/CountriesDataContext";
+import { CountryDataTypes } from "./CountryDetailsProps";
 import {
 	StyledCountryDataWrapper,
 	StyledCountryInfoWrapper,
@@ -8,11 +9,10 @@ import {
 	StyledDivWithCountryData,
 	StyledSection,
 } from "./CountryDetails.styles";
-import { CountryDataTypes } from "./CountryDetailsProps";
+import { FlagComponent } from "./Flag/FlagComponent";
 import { LeftColumnWithCountryInfo } from "./LeftColumnWithCountryInfo/LeftColumnWithCountryInfo";
 import { RightColumnWithCountryInfo } from "./RightColumnWithCountryInfo/RightColumnWithCountryInfo";
 import { BorderCountriesButtons } from "./BorderCountriesButtons/BorderCountriesButtons";
-import { FlagComponent } from "./Flag/FlagComponent";
 
 export const CountryDetails = () => {
 	const {
