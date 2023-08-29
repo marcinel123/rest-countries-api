@@ -2,7 +2,9 @@
 
 ## About the project
 
-This application uses api from: https://restcountries.com/
+This application uses API from: https://restcountries.com/
+
+You can find any country in the world and see it's details page for more information.
 
 Live version: https://rest-countries-by-ela.netlify.app/
 
@@ -25,26 +27,34 @@ Live version: https://rest-countries-by-ela.netlify.app/
 These simple steps should start the app in you browser.
 
 <table>
- <tr><td valign="top" width="33%">
+ <tr><td valign="top" width="25%">
 
 Desktop view:
 
-<img width="609" alt="url1" src="https://user-images.githubusercontent.com/95523781/235311155-bf06e102-fd4f-4379-891b-b6bf4d000798.png">
+<img width="609" alt="url1" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/642eea90-b405-4bb9-9863-a3c755fc555b">
   </td>
 
-<td valign="top" width="33%">
+<td valign="top" width="25%">
    
 Mobile view:
 
-<img width="204" alt="url2" src="https://user-images.githubusercontent.com/95523781/235311158-13840e09-79d6-429e-9b6d-5ed08fab7970.png">
+<img width="204" alt="url2" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/f2166ac1-9a2a-469d-924a-8600389af56d">
    
 </td>
   
-<td valign="top" width="33%">
+<td valign="top" width="25%">
  
-Error view when you type in incorrect IP address:
+List filtered with select option:
 
-<img width="441" alt="url3" src="https://user-images.githubusercontent.com/95523781/235311160-eb950bac-63a8-41cd-af50-05a2e90bfaec.png">
+<img width="441" alt="url3" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/993d99f5-b690-4514-b1cd-f280671ee13b">
+ 
+</td>
+
+<td valign="top" width="25%">
+ 
+Details page:
+
+<img width="441" alt="url3" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/2d01403f-77b3-496b-8040-58d871fc5068">
  
 </td>
  
