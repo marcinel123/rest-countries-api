@@ -12,8 +12,8 @@ import { GlobalStyle } from "../../theme/globalStyles/GlobalStyles";
 import { CountriesDataContext } from "../../context/CountriesDataContext";
 import { darkTheme } from "../../theme/darkTheme";
 import { useDarkThemeMode } from "../../hooks/useDarkThemeMode";
-import { CountryDetails } from "../CountryDetails/CountryDetails";
-import { Page404 } from "../Page404/Page404";
+import { CountryDetails } from "../countryDetails/CountryDetails";
+import { Page404 } from "../page404/Page404";
 import { countryDetailsLoader } from "../../api/countryDetailsLoader";
 
 const StyledMain = styled.main`
