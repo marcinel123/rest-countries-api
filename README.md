@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Rest Countries Api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the project
 
-## Available Scripts
+This application uses API from: https://restcountries.com/
 
-In the project directory, you can run:
+You can find any country in the world and see it's details page for more information.
 
-### `npm start`
+Live version: https://rest-countries-by-ela.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="75" /></a><a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="75" /></a><a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="75" /></a><a href="https://github.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="75" /></a><a href="https://styled-components.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/styled-components.png" alt="Styled Components" height="75" /></a><a href="https://www.typescriptlang.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/typescript-original.svg" alt="TypeScript" height="50" /></a>
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. First what you need to do is to clone this repo.
 
-### `npm run build`
+2. Go to your terminal and write: `git clone https://github.com/marcinel123/rest-countries-api.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. After cloning is finished you have to enter the folder with this repo so in you terminal write: `cd rest-countries-api.git` 
+ 
+4. Next thing to do is to install all dependencies so you need to write: `npm install`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Last thing and we are all setup, please write in terminal: `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These simple steps should start the app in you browser.
 
-### `npm run eject`
+<table>
+ <tr><td valign="top" width="25%">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Desktop view:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img width="609" alt="url1" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/642eea90-b405-4bb9-9863-a3c755fc555b">
+  </td>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<td valign="top" width="25%">
+   
+Mobile view:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img width="204" alt="url2" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/f2166ac1-9a2a-469d-924a-8600389af56d">
+   
+</td>
+  
+<td valign="top" width="25%">
+ 
+List filtered with select option:
 
-## Learn More
+<img width="441" alt="url3" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/993d99f5-b690-4514-b1cd-f280671ee13b">
+ 
+</td>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<td valign="top" width="25%">
+ 
+Details page:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="441" alt="url3" src="https://github.com/marcinel123/rest-countries-api/assets/95523781/2d01403f-77b3-496b-8040-58d871fc5068">
+ 
+</td>
+ 
+</tr></table>  
